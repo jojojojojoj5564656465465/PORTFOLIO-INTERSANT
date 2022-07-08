@@ -53,17 +53,16 @@ const BaseLink = ({
     }
 
     return (
-
-        <a
+      <a
         href={href}
-          aria-label={aria}
-          className={cn([underline, `hover:underline`], className)}
-          onClick={onClick}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-        >
-          {children}
-        </a>
+        aria-label={aria}
+        className={cn([underline, `hover:underline`], className)}
+        onClick={onClick}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        {children}
+      </a>
     )
   }
 }

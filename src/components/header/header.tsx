@@ -39,25 +39,25 @@ const Header = ({
     >
       <AltView sizes={['lg']}>
         <>
-        <VCenterRow className="justify-between p-2 pl-6">
-          <BaseLink href="/" aria="Goto Homepage">
-            {headerMode === 'dark' ? (
-              <LogoDark className="w-48" />
-            ) : (
-              <Logo className="w-48" />
-            )}
-          </BaseLink>
+          <VCenterRow className="justify-between p-2 pl-6">
+            <BaseLink href="/" aria="Goto Homepage">
+              {headerMode === 'dark' ? (
+                <LogoDark className="w-48" />
+              ) : (
+                <Logo className="w-48" />
+              )}
+            </BaseLink>
 
-          <MenuOpenButton headerMode={headerMode} onClick={_handleClick} />
-        </VCenterRow>
+            <MenuOpenButton headerMode={headerMode} onClick={_handleClick} />
+          </VCenterRow>
 
-        <MenuOverlay
-        title={title}
-        page={tab}
-        expanded={expanded}
-        onClick={_handleClick}
-      />
-      </>
+          <MenuOverlay
+            title={title}
+            page={tab}
+            expanded={expanded}
+            onClick={_handleClick}
+          />
+        </>
         <ArticleContainer>
           <nav className="grid py-4 grid-cols-10">
             <div className="col-span-3">
@@ -76,8 +76,6 @@ const Header = ({
         </ArticleContainer>
         {/* </div> */}
       </AltView>
-      
-
     </header>
   )
 }

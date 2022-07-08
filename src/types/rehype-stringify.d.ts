@@ -1,1 +1,1 @@
-declare module "rehype-stringify"
+declare module 'rehype-stringify'

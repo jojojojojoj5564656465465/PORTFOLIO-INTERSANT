@@ -1,1 +1,1 @@
-declare module "remark-rehype"
+declare module 'remark-rehype'

@@ -4,7 +4,7 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 
-export const markdownHtml = async (markdown:string) => {
+export const markdownHtml = async (markdown: string) => {
   //const result = await remark().use(html).use(prism).process(markdown)
   const result = await unified()
     .use(remarkParse)
