@@ -1,0 +1,19 @@
+---
+import PageTitle from "../components/page-title"
+import ArticleLayout from "./ArticleLayout.astro"
+
+export interface Props {
+	title: string
+	description?: string
+	tab?: string
+	isIndexed?: boolean
+	className?: string
+}
+
+let { title, description, tab, isIndexed = true, className } = Astro.props
+---
+
+<ArticleLayout title={title} description={description} tab={tab} isIndexed={isIndexed}>
+	<PageTitle title={title} subtitle={description} />
+	<slot />
+</ArticleLayout>

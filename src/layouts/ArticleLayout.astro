@@ -1,0 +1,20 @@
+---
+import BaseLayout from './BaseLayout.astro'
+import ArticleContainer from "../components/article-container"
+
+export interface Props {
+	title: string
+	description?: string
+	tab?: string
+	path?: string
+	isIndexed?: boolean
+}
+
+let { title, description, tab, path="/", isIndexed } = Astro.props
+---
+
+<BaseLayout title={title} description={description} tab={tab} path={path} isIndexed={isIndexed}>
+	<ArticleContainer className='pb-12'>
+		<slot />
+	</ArticleContainer>
+</BaseLayout>

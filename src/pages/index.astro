@@ -1,0 +1,45 @@
+---
+// Component Imports
+import PostsPage from '../components/pages/posts-page'
+import { RECORDS_PER_PAGE } from '../constants'
+import ArticleLayout from '../layouts/ArticleLayout.astro'
+import { getAuthorMap } from '../lib/api/author'
+import { getAllPosts, getSectionMap } from '../lib/api/post'
+import markdownHtml from '../lib/markdown-html'
+
+const authorMap = getAuthorMap(['id', 'name', 'title', 'picture'])
+
+// Get all the posts and add the authors in
+const allPosts = getAllPosts([
+	'title',
+	'description',
+	'author',
+	'section',
+	'tags',
+	'hero',
+	'excerpt',
+])
+
+//await generateSiteMap(posts)
+//await generateRSS(posts)
+
+const posts = await Promise.all(
+	allPosts.map(async post => {
+		const excerpt = await markdownHtml(post.fields.excerpt || '')
+		return {
+			...post,
+			excerpt,
+			authors: [authorMap[post.fields.author]],
+		}
+	})
+)
+
+const sectionMap = getSectionMap(posts)
+
+const pages = Math.floor((posts.length + RECORDS_PER_PAGE - 1) / RECORDS_PER_PAGE)
+---
+
+<ArticleLayout title="Home" path="/">
+	<PostsPage posts={posts.slice(0, RECORDS_PER_PAGE)} page={1} pages={pages} showLatestPosts={true}
+		sectionMap={sectionMap} />
+</ArticleLayout>

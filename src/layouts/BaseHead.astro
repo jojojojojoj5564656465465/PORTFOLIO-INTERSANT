@@ -1,0 +1,75 @@
+---
+import '../styles/main.css';
+
+import { SITE_NAME } from "../constants"
+
+export interface Props {
+  title: string
+  description?: string
+  path?: string
+  isIndexed?: boolean
+}
+
+const { title, description, path="/", isIndexed=true } = Astro.props
+
+const desc = description ? description : title
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+
+<!-- Primary Meta Tags -->
+<title>{title} - {SITE_NAME}</title>
+<meta name="title" content={title} />
+<meta name="description" content={desc} />
+
+<!-- favicon -->
+<link rel="icon" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+
+<meta name="theme-color" content="#ffffff" />
+<link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<!-- <meta property="og:url" content={permalink} /> -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={desc} />
+<!-- <meta property="og:image" content="https://astro.build/social.jpg?v=1" /> -->
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<!-- <meta property="twitter:url" content={permalink} /> -->
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={desc} />
+<meta property="twitter:creator" content="@politeinvestor">
+<!-- <meta property="twitter:image" content="https://astro.build/social.jpg?v=1" /> -->
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet">
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121311307-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121311307-2');
+</script>
+
+{!isIndexed && (
+  <>
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="googlebot" content="noindex,nofollow" />
+  </>
+)}
