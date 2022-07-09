@@ -1,20 +1,23 @@
 ---
 import ContentLayout from "./ContentLayout.astro"
-import ThreeQuarterLayout from "./three-quarter-layout"
+import ThreeQuarterLayout from "./ThreeQuarterLayout.astro"
 
 export interface Props {
   title: string
   description?: string
   tab?: string
+  slug?: string
   isIndexed?: boolean
   className?: string
 }
 
-let { title, description, tab, isIndexed = true, className } = Astro.props
+let { title, description, tab, slug, isIndexed = true, className } = Astro.props
 ---
 
-<ContentLayout title={title} description={description} tab={tab} isIndexed={isIndexed} className={className}>
-  <ThreeQuarterLayout>
-    <slot />
-  </ThreeQuarterLayout>
+<ContentLayout title={title} description={description} tab={tab} slug={slug} isIndexed={isIndexed} className={className}>
+  <slot name="s1"/>
+  <!-- <ThreeQuarterLayout>
+    <slot name="s1"/>
+   
+  </ThreeQuarterLayout> -->
 </ContentLayout>

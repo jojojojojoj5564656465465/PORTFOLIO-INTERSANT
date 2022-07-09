@@ -1,6 +1,5 @@
 ---
 import { range } from 'lodash-es'
-import PageTitle from '../../../components/page-title'
 import PostsPage from '../../../components/pages/posts-page'
 import { RECORDS_PER_PAGE } from '../../../constants'
 import ContentLayout from '../../../layouts/ContentLayout.astro'
@@ -8,7 +7,7 @@ import { getAuthorMap } from '../../../lib/api/author'
 import { getAllPosts } from '../../../lib/api/post'
 import markdownHtml from '../../../lib/markdown-html'
 import { getUrlFriendlyTag } from '../../../lib/tags'
-import { getSectionBaseUrl } from '../../../lib/urls'
+import { getTagBaseUrl } from '../../../lib/urls'
 
 export async function getStaticPaths() {
   const authorMap = getAuthorMap(['id', 'name', 'title', 'picture'])
@@ -20,50 +19,64 @@ export async function getStaticPaths() {
     'slug',
     'url',
     'author',
-    'section',
+    'tag',
     'tags',
     'content',
     'ogImage',
     'hero',
   ]).map(async post => {
-        return {
-          ...post,
-          excerpt: await markdownHtml(post.fields.excerpt || ''),
-          //html : await markdownHtml(post.fields.content || ''),
-          authors: [authorMap[post.fields.author]],
-        }
-      }))
+    return {
+      ...post,
+      excerpt: await markdownHtml(post.fields.excerpt || ''),
+      //html : await markdownHtml(post.fields.content || ''),
+      authors: [authorMap[post.fields.author]],
+    }
+  }))
 
-  
 
-  let sections = new Set<string>()
+
+  const tags = new Set<string>()
 
   allPosts.forEach(post => {
-    sections.add(post.fields.section)
+    post.fields.tags.forEach((tag: string) => {
+      tags.add(tag)
+    })
   })
 
   let paths: any[] = []
 
-  Array.from(sections).forEach(section => {
-    const posts = allPosts.filter(post => post.fields.section.includes(section))
-
-
+  Array.from(tags).forEach(tag => {
+    const posts = allPosts.filter(post => post.fields.tags.includes(tag))
 
     const pages = Math.floor(
       (posts.length + RECORDS_PER_PAGE - 1) / RECORDS_PER_PAGE
     )
 
-    range(0, pages).forEach((page:number) => {
+    range(0, pages).forEach((page: number) => {
       const start = page * RECORDS_PER_PAGE
       const end = start + RECORDS_PER_PAGE
       const currentPage = page + 1
 
+      if (page == 0) {
+        paths.push({
+          params: {
+            slug: `${getUrlFriendlyTag(tag)}`,
+          },
+          props: {
+            tag,
+            currentPage,
+            pages,
+            posts
+          }
+        })
+      }
+
       paths.push({
         params: {
-          slug: `${getUrlFriendlyTag(section)}/page/${currentPage.toString()}`,
+          slug: `${getUrlFriendlyTag(tag)}/page/${currentPage.toString()}`,
         },
         props: {
-          section,
+          tag,
           currentPage,
           pages,
           posts
@@ -78,13 +91,14 @@ export async function getStaticPaths() {
 const { slug } = Astro.params
 
 const {
-  section,
+  tag,
   currentPage,
   pages,
   posts
 } = Astro.props
 ---
 
-<ContentLayout title={section} tab="Blog" supertitle="Section">
-  <PostsPage posts={posts} page={currentPage} pages={pages} root={getSectionBaseUrl(section)} />
+<ContentLayout title={tag} tab="Blog" supertitle={"Tag"}>
+
+  <PostsPage posts={posts} page={currentPage} pages={pages} root={getTagBaseUrl(tag)} />
 </ContentLayout>

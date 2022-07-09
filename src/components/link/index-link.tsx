@@ -39,7 +39,7 @@ const IndexLink = ({ href, aria, className, children }: ILinkProps) => {
     >
       {children}
 
-      <div ref={iconEl} className="ml-2">
+      <div ref={iconEl} className="w-3 ml-2">
         <FontAwesomeIcon icon={faChevronRight} />
       </div>
     </BaseLink>

@@ -22,5 +22,5 @@ export const getTagBaseUrl = (tag: string) => {
 }
 
 export const getTagUrl = (tag: string) => {
-  return `${getTagBaseUrl(tag)}${PAGE_1_SLUG}`
+  return getTagBaseUrl(tag)
 }

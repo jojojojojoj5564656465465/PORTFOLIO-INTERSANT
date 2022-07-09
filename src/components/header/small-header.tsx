@@ -37,7 +37,7 @@ const SmallHeader = ({
 
   return (
     <>
-      <VCenterRow className="flex lg:hidden w-full justify-between p-2 pl-6">
+      <VCenterRow className="flex w-full justify-between p-2 pl-6">
         <BaseLink href="/" aria="Goto Homepage">
           {headerMode === 'dark' ? (
             <LogoDark className="w-48" />

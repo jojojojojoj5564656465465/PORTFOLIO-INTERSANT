@@ -1,18 +1,21 @@
 ---
 import '../styles/main.css';
 
-import { SITE_NAME } from "../constants"
+import { SITE_NAME, SITE_URL, GTAG } from "../constants"
 
 export interface Props {
   title: string
   description?: string
-  path?: string
+  slug?: string
   isIndexed?: boolean
 }
 
-const { title, description, path="/", isIndexed=true } = Astro.props
+const { title, description, slug, isIndexed=true } = Astro.props
 
 const desc = description ? description : title
+
+
+const permalink = slug ? `${SITE_URL}${slug}` : Astro.canonicalURL.href
 ---
 
 <!-- Global Metadata -->
@@ -32,18 +35,18 @@ const desc = description ? description : title
 <meta name="theme-color" content="#ffffff" />
 <link rel="manifest" href="/manifest.webmanifest" />
 
-
+<link rel="bookmark" href={permalink} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<!-- <meta property="og:url" content={permalink} /> -->
+<meta property="og:url" content={permalink} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={desc} />
 <!-- <meta property="og:image" content="https://astro.build/social.jpg?v=1" /> -->
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<!-- <meta property="twitter:url" content={permalink} /> -->
+<meta property="twitter:url" content={permalink} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={desc} />
 <meta property="twitter:creator" content="@politeinvestor">
@@ -58,13 +61,13 @@ const desc = description ? description : title
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121311307-2"></script>
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-121311307-2');
+  gtag('config', GTAG);
 </script>
 
 {!isIndexed && (

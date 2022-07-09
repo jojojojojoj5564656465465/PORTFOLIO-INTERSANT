@@ -9,23 +9,23 @@ export interface Props {
   title: string
   description?: string
   tab?: string
-  path?: string
+  slug?: string
   isIndexed?: boolean
   className?: string
 }
 
-let { title, description, tab, path="/", isIndexed=true, className } = Astro.props
+let { title, description, tab, slug, isIndexed=true, className } = Astro.props
 ---
 
 <html lang="en">
 
 <head>
-  <BaseHead title="Home" path={path} isIndexed={isIndexed} />
+  <BaseHead title={title} slug={slug} isIndexed={isIndexed} />
 </head>
 
 <body>
   <header class="w-full border-b py-0 lg:py-2 border-gray-200">
-    <SmallHeader title={title} />
+    <div class="lg:hidden"><SmallHeader title={title} client:visible /></div>
     <LargeHeader title={title} />
   </header>
 
