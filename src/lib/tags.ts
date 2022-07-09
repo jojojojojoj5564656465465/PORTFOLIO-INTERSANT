@@ -1,4 +1,4 @@
-import { capitalize } from 'lodash'
+import { capitalize } from 'lodash-es'
 
 export const getTags = (tags: string) => {
   return tags

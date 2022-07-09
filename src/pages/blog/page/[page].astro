@@ -1,0 +1,42 @@
+---
+import { getAllPosts } from '../../../lib/api/post'
+import { RECORDS_PER_PAGE } from '../../../constants'
+import { range } from 'lodash-es'
+import { getAuthorMap } from '../../../lib/api/author'
+import PostsPage from '../../../components/pages/posts-page'
+import ArticleLayout from '../../../layouts/ArticleLayout.astro'
+import markdownHtml from '../../../lib/markdown-html'
+
+export async function getStaticPaths({ paginate }) {
+  const authorMap = getAuthorMap(['id', 'name', 'title', 'picture'])
+
+  let allPosts = getAllPosts([
+    'title',
+    'description',
+    'author',
+    'section',
+    'tags',
+    'hero',
+    'excerpt',
+  ])
+
+  const posts = await Promise.all(
+    allPosts.map(async post => {
+      return {
+        ...post,
+        excerpt: await markdownHtml(post.fields.excerpt || ''),
+        //html : await markdownHtml(post.fields.content || ''),
+        authors: [authorMap[post.fields.author]],
+      }
+    })
+  )
+
+  return paginate(posts, { pageSize: RECORDS_PER_PAGE })
+}
+
+const { page } = Astro.props
+---
+
+<ArticleLayout title="All Posts" tab="Blog">
+  <PostsPage posts={page.data} page={page.currentPage} pages={page.lastPage} />
+</ArticleLayout>

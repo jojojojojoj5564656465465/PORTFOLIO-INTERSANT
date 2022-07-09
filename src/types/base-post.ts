@@ -1,6 +1,6 @@
 interface IBasePost {
-  slug: string
-  url: string
+  //slug: string
+  //url: string
   index: number
   date: string
   fields: {

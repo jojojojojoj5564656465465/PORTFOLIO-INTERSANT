@@ -9,7 +9,7 @@ import LatestPosts from '../post/latest-posts'
 import SectionPosts from '../post/section-posts'
 
 interface IProps {
-  posts: IPreviewPost[]
+  posts: any[]
   page: number
   pages: number
   showLatestPosts?: boolean
@@ -32,12 +32,8 @@ const PostsPage = ({
     <>
       <HeroPosts posts={headPosts} />
 
-      {/* <HeadPost post={heroPost} /> */}
       <HeadPosts posts={morePosts} />
-      {/* <HeroPost post={heroPost} /> */}
-      {/* <MorePosts posts={morePosts} /> */}
 
-      {/* <Pagination page={page} pages={pages} /> */}
       {pages > 1 && <Pagination page={page} pages={pages} root={root} />}
 
       {showLatestPosts && <LatestPosts posts={posts} />}

@@ -1,5 +1,5 @@
 import BlueLink from './link/blue-link'
-import { range } from 'lodash'
+import { range } from 'lodash-es'
 import ToBlueLink from './link/to-blue-link'
 import HCenterCol from './h-center-col'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

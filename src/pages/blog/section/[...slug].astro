@@ -1,0 +1,95 @@
+---
+import { range } from 'lodash-es'
+import PageTitle from '../../../components/page-title'
+import PostsPage from '../../../components/pages/posts-page'
+import { RECORDS_PER_PAGE } from '../../../constants'
+import ArticleLayout from '../../../layouts/ArticleLayout.astro'
+import { getAuthorMap } from '../../../lib/api/author'
+import { getAllPosts } from '../../../lib/api/post'
+import markdownHtml from '../../../lib/markdown-html'
+import { getUrlFriendlyTag } from '../../../lib/tags'
+import { getSectionBaseUrl } from '../../../lib/urls'
+
+export async function getStaticPaths() {
+  const authorMap = getAuthorMap(['id', 'name', 'title', 'picture'])
+
+  const allPosts = await Promise.all(getAllPosts([
+    'title',
+    'description',
+    'date',
+    'slug',
+    'url',
+    'author',
+    'section',
+    'tags',
+    'content',
+    'ogImage',
+    'hero',
+  ]).map(async post => {
+        return {
+          ...post,
+          excerpt: await markdownHtml(post.fields.excerpt || ''),
+          //html : await markdownHtml(post.fields.content || ''),
+          authors: [authorMap[post.fields.author]],
+        }
+      }))
+
+  
+
+  let sections = new Set<string>()
+
+  allPosts.forEach(post => {
+    sections.add(post.fields.section)
+  })
+
+  let paths: any[] = []
+
+  Array.from(sections).forEach(section => {
+    const posts = allPosts.filter(post => post.fields.section.includes(section))
+
+
+
+    const pages = Math.floor(
+      (posts.length + RECORDS_PER_PAGE - 1) / RECORDS_PER_PAGE
+    )
+
+    range(0, pages).forEach((page:number) => {
+      const start = page * RECORDS_PER_PAGE
+      const end = start + RECORDS_PER_PAGE
+
+      paths.push({
+        params: {
+          slug: `${getUrlFriendlyTag(section)}/page/${(page + 1).toString()}`,
+        },
+        props: {
+          section,
+          page,
+          pages,
+          start,
+          end,
+          posts
+        }
+      })
+    })
+  })
+
+  return paths
+}
+
+const { slug } = Astro.params
+
+const {
+
+  section,
+  page,
+  pages,
+  start,
+  end,
+  posts
+} = Astro.props
+---
+
+<ArticleLayout title={section} tab="Blog">
+  <PageTitle title={section} supertitle="Section" />
+  <PostsPage posts={posts} page={page} pages={pages} root={getSectionBaseUrl(section)} />
+</ArticleLayout>

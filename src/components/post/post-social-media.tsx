@@ -10,7 +10,7 @@ import BaseLink from '../link/base-link'
 import VCenterRow from '../v-center-row'
 
 export const CLS_TEXT_GRAY_HOVER =
-  'text-gray-300 hover:text-gray-400 animate-button '
+  'text-gray-300 hover:text-gray-400 animate-button w-8'
 
 interface IProps {
   post: IPost
@@ -25,11 +25,7 @@ const PostSocialMedia = ({ post }: IProps) => {
         href={`https://twitter.com/intent/tweet?text=${post.fields.title}&url=${url}`}
         className="mr-4"
       >
-        <FontAwesomeIcon
-          icon={faTwitter}
-          size="2x"
-          className={CLS_TEXT_GRAY_HOVER}
-        />
+        <FontAwesomeIcon icon={faTwitter} className={CLS_TEXT_GRAY_HOVER} />
       </BaseLink>
 
       <BaseLink
@@ -37,11 +33,7 @@ const PostSocialMedia = ({ post }: IProps) => {
         aria="Post article to Facebook"
         className="mr-4"
       >
-        <FontAwesomeIcon
-          icon={faFacebook}
-          size="2x"
-          className={CLS_TEXT_GRAY_HOVER}
-        />
+        <FontAwesomeIcon icon={faFacebook} className={CLS_TEXT_GRAY_HOVER} />
       </BaseLink>
 
       <BaseLink
@@ -49,11 +41,7 @@ const PostSocialMedia = ({ post }: IProps) => {
         aria="Post article to LinkedIn"
         className="mr-4"
       >
-        <FontAwesomeIcon
-          icon={faLinkedin}
-          size="2x"
-          className={CLS_TEXT_GRAY_HOVER}
-        />
+        <FontAwesomeIcon icon={faLinkedin} className={CLS_TEXT_GRAY_HOVER} />
       </BaseLink>
     </VCenterRow>
   )

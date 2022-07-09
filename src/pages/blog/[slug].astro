@@ -5,45 +5,18 @@ import PostDetails from '../../components/post/post-details'
 import PostHeader from '../../components/post/post-header'
 import RelatedPosts from '../../components/post/related-posts'
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import SeventyLayout from '../../layouts/seventy-layout'
+import SeventyLayout from '../../layouts/SeventyLayout.astro'
 import { getAuthorMap } from '../../lib/api/author'
-import { getAllPosts,getSectionMap } from '../../lib/api/post'
+import { getAllPosts, getSectionMap } from '../../lib/api/post'
 import markdownHtml from '../../lib/markdown-html'
 import { getCanonicalPostSlug } from '../../lib/slug'
 import { getTags } from '../../lib/tags'
-import IPost from '../../types/post'
-import IPreviewPost from '../../types/preview-post'
 
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
-
-  const paths = posts.map(post => {
-    console.log(getCanonicalPostSlug(post.slug))
-    return {
-      params: {
-        slug: getCanonicalPostSlug(post.slug),
-      },
-    }
-  })
-
-  
-
-  return paths
-}
-
-const { slug } = Astro.params
-
-interface IProps {
-  post: IPost
-  relatedPosts: IPreviewPost[]
-  readMorePosts: IPreviewPost[]
-}
-
-
   const authorMap = getAuthorMap(['id', 'name', 'title', 'picture'])
 
-  const posts = getAllPosts([
+  const allPosts = getAllPosts([
     'title',
     'description',
     'slug',
@@ -55,96 +28,111 @@ interface IProps {
     'hero',
   ])
 
-  const sectionMap = getSectionMap(posts)
+  const sectionMap = getSectionMap(allPosts)
 
-  let post: any = null
-  let postIndex = -1
+  const paths = await Promise.all(allPosts.map(async basePost => {
+    const slug = getCanonicalPostSlug(basePost.slug)
 
-  Object.keys(sectionMap).every(section => {
-    sectionMap[section].every((p, index) => {
-      if (p.slug === slug) {
-        post = p
-        postIndex = index
-        return false
-      }
+    let postIndex = -1
 
-      return true
-    })
+    // Object.keys(sectionMap).every(section => {
+    //   sectionMap[section].every((p, index) => {
+    //     if (p.slug === slug) {
+    //       post = p
+    //       postIndex = index
+    //       return false
+    //     }
 
-    if (post !== null) {
-      return false
+    //     return true
+    //   })
+
+    //   if (post !== null) {
+    //     return false
+    //   }
+
+    //   return true
+    // })
+
+    const author = authorMap[basePost.fields.author]
+
+    const post = {
+      ...basePost,
+      html: await markdownHtml(basePost.fields.content || ''),
+      authors: [author],
     }
 
-    return true
-  })
+    const relatedTitles = getTags(post.fields.related)
 
-  const author = authorMap[post.fields.author]
+    const relatedPosts = await Promise.all(
+      allPosts
+        .filter(p => relatedTitles.includes(p.fields.title))
+        .map(async p => {
+          return {
+            ...p,
+            excerpt: await markdownHtml(p.fields.excerpt || ''),
+            authors: [author],
+          }
+        })
+    )
 
-  post = {
-    ...post,
-    html: await markdownHtml(post.fields.content || ''),
-    authors: [author],
-  }
-
-  const relatedTitles = getTags(post.fields.related)
-
-  const relatedPosts = await Promise.all(
-    posts
-      .filter(p => relatedTitles.includes(p.fields.title))
-      .map(async p => {
+    const readMorePosts = await Promise.all(
+      sectionMap[post.fields.section].slice(postIndex + 1).map(async p => {
         return {
           ...p,
           excerpt: await markdownHtml(p.fields.excerpt || ''),
           authors: [author],
         }
       })
-  )
-
-  const readMorePosts = await Promise.all(
-    sectionMap[post.fields.section].slice(postIndex + 1).map(async p => {
-      return {
-        ...p,
-        excerpt: await markdownHtml(p.fields.excerpt || ''),
-        authors: [author],
-      }
-    })
-  )
+    )
 
 
+    return {
+      params: { slug },
+      props: {
+        post,
+        relatedPosts,
+        readMorePosts
+      },
+    }
+  }))
 
+  return paths
+}
+
+const { slug } = Astro.params
+const { post, relatedPosts, readMorePosts } = Astro.props
 ---
 
+<BaseLayout title={post.fields.title} tab="Blog">
+  <>
+    <article>
+      <PostHeader post={post} />
 
-  <BaseLayout title={post.fields.title} tab="Blog" >
-    <>
-      <article>
-        <PostHeader post={post} />
+      <ArticleContainer className="mt-48">
+        <SeventyLayout>
+          <div slot="s1">
+            <PostDetails post={post} className="block lg:hidden mb-8" />
 
-        <ArticleContainer className="mt-48">
-          <SeventyLayout>
-            <>
-              <PostDetails post={post} className="block lg:hidden mb-8" />
+            <PostBody content={post.html} className="mb-32" />
+            
+          </div>
+          <div class="sticky top-0 mb-32" style="top: 40px" slot="s2">
+            <PostDetails post={post} />
+          </div>
+        </SeventyLayout>
+      </ArticleContainer>
+    </article>
 
-              <PostBody content={post.html} className="mb-32" />
-            </>
-            <div class="sticky top-0 mb-32" style="top: 40px">
-              <PostDetails post={post} />
-            </div>
-          </SeventyLayout>
-        </ArticleContainer>
-      </article>
+    {readMorePosts.length > 0 && (
+    <ArticleContainer className="bg-gray-50 py-16 lg:py-24">
+      <RelatedPosts posts={readMorePosts} title="Keep Reading" />
+    </ArticleContainer>
+    )}
 
-      {/* </ArticleContainer> */}
-      {readMorePosts.length > 0 && (
-        <ArticleContainer className="bg-gray-50 py-16 lg:py-24">
-          <RelatedPosts posts={readMorePosts} title="Keep Reading" />
-        </ArticleContainer>
-      )}
-
-      {relatedPosts.length > 0 && (
-        <ArticleContainer className="bg-gray-50 py-16 lg:py-24">
-          <RelatedPosts posts={relatedPosts} title="Related Posts" />
-        </ArticleContainer>
-      )}
-    </>
-  </BaseLayout>
+    {relatedPosts.length > 0 && (
+    <ArticleContainer className="bg-gray-50 py-16 lg:py-24">
+      <RelatedPosts posts={relatedPosts} title="Related Posts" />
+    </ArticleContainer>
+    )}
+  </>
+</BaseLayout>
