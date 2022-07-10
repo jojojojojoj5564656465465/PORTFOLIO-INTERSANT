@@ -31,7 +31,7 @@ body {
   
   
   .markdown {
-    @apply text-lg leading-relaxed font-light;
+    @apply text-base leading-relaxed font-light;
   }
   
   .markdown ol {

@@ -16,7 +16,7 @@ const calcLink = (name: string, description: string, to: string) => {
           <HCenterRow className="w-full">
             <FontAwesomeIcon
               icon={faCalculator}
-              className="w-32 text-gray-300"
+              className="w-24 text-gray-300"
             />
           </HCenterRow>
           <div className="mt-8">
@@ -32,7 +32,7 @@ const calcLink = (name: string, description: string, to: string) => {
           </BaseLink> */}
           </div>
         </div>
-        <VCenterRow className="justify-center py-8 text-sm uppercase font-semibold text-emerald-400 w-full">
+        <VCenterRow className="justify-center pb-8 text-sm uppercase font-semibold text-emerald-400 w-full">
           Run <FontAwesomeIcon icon={faArrowRight} className="w-5 ml-2" />
         </VCenterRow>
       </BaseLink>
