@@ -21,12 +21,12 @@ const allPosts = getAllPosts([
 
 // Get all the posts and add the authors in
 const posts = await Promise.all(allPosts.map(async post => {
-		return {
-			...post,
-			excerpt:await markdownHtml(post.fields.excerpt || ''),
-			authors: [authorMap[post.fields.author]],
-		}
-	})
+	return {
+		...post,
+		excerpt: await markdownHtml(post.fields.excerpt || ''),
+		authors: [authorMap[post.fields.author]],
+	}
+})
 )
 
 const sectionMap = getSectionMap(posts)
@@ -34,7 +34,7 @@ const sectionMap = getSectionMap(posts)
 const pages = Math.floor((posts.length + RECORDS_PER_PAGE - 1) / RECORDS_PER_PAGE)
 ---
 
-<ArticleLayout title="Home" path="/">
+<ArticleLayout title="Home" >
 	<PostsPage posts={posts.slice(0, RECORDS_PER_PAGE)} page={1} pages={pages} showLatestPosts={true}
 		sectionMap={sectionMap} />
 </ArticleLayout>

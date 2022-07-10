@@ -4,7 +4,6 @@ import Sidebar from '../../graph/sidebar'
 import SidebarHeading from '../../graph/sidebar-heading'
 import Slider from '../../graph/slider'
 import MainSideCol from '../../main-side-col'
-import PageTitle from '../../page-title'
 import TextBox from '../../textbox'
 
 const heading = (text: string) => {
