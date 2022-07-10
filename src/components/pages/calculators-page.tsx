@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import BaseLink from '../../components/link/base-link'
-import { faArrowRight, faCalculator } from '@fortawesome/free-solid-svg-icons'
 import VCenterRow from '../../components/v-center-row'
 import HCenterRow from '../../components/h-center-row'
+import ArrowRightIcon from '../icons/arrow-right'
+import CalculatorIcon from '../icons/calculator'
 
 const calcLink = (name: string, description: string, to: string) => {
   return (
@@ -14,10 +14,7 @@ const calcLink = (name: string, description: string, to: string) => {
       >
         <div className="h-full px-6 py-8">
           <HCenterRow className="w-full">
-            <FontAwesomeIcon
-              icon={faCalculator}
-              className="w-24 text-gray-300"
-            />
+            <CalculatorIcon className="w-24 fill-blue-300" />
           </HCenterRow>
           <div className="mt-8">
             <h4 className="font-semibold">{name}</h4>
@@ -32,8 +29,8 @@ const calcLink = (name: string, description: string, to: string) => {
           </BaseLink> */}
           </div>
         </div>
-        <VCenterRow className="justify-center pb-8 text-sm uppercase font-semibold text-emerald-400 w-full">
-          Run <FontAwesomeIcon icon={faArrowRight} className="w-5 ml-2" />
+        <VCenterRow className="justify-center pb-8 text-sm uppercase font-semibold text-emerald-400 fill-emerald-400 w-full">
+          Run <ArrowRightIcon className="w-5 ml-2" />
         </VCenterRow>
       </BaseLink>
     </li>

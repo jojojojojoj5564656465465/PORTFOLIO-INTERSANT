@@ -49,7 +49,7 @@ const HeroPost = ({
       <div>
         <PostSectionLink post={post} />
         <h2 className="mb-4 font-bold text-4xl lg:text-5xl mt-2">
-          <UnderlineLink href={post.url} aria={`Read article`}>
+          <UnderlineLink href={post.slug} aria={`Read article`}>
             {post.fields.title}
           </UnderlineLink>
         </h2>

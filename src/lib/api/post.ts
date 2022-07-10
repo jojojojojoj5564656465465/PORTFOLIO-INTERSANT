@@ -46,8 +46,7 @@ export const getPostBySlug = (
   const date = match ? match.slice(1, 4).join('-') : '2022-01-01'
 
   const post = {
-    slug: canonicalSlug,
-    url: isPublished
+    slug: isPublished
       ? `/blog/${canonicalSlug}`
       : `/blog/drafts/${canonicalSlug}`,
     date: date,

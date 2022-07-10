@@ -9,7 +9,7 @@ interface IProps {
 
 const PostTitleLink = ({ post, className }: IProps) => (
   <h2 className={cn('font-bold mt-2', className)}>
-    <ToBlueLink href={post.url} aria={`Read article`} underline={true}>
+    <ToBlueLink href={post.slug} aria={`Read article`} underline={true}>
       {post.fields.title}
     </ToBlueLink>
   </h2>

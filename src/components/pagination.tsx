@@ -2,13 +2,13 @@ import BlueLink from './link/blue-link'
 import { range } from 'lodash-es'
 import ToBlueLink from './link/to-blue-link'
 import HCenterCol from './h-center-col'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faChevronLeft,
-  faChevronRight,
-} from '@fortawesome/free-solid-svg-icons'
+
 import BaseLink from './link/base-link'
 import { ReactNode } from 'react'
+
+import ChevronLeftIcon from './icons/chevron-left'
+import ChevronRightIcon from './icons/chevron-right'
+
 import cn from '../lib/class-names'
 
 const makeUrl = (root: string, page: number) => {
@@ -62,7 +62,7 @@ const Button = ({ href, aria, className, children }: ButtonProps) => (
     aria={aria}
     className={cn(
       BTN_CLS,
-      'text-blue-500 hover:border-gray-300 transition duration-300',
+      'text-blue-500 fill-blue-500 hover:border-gray-300 transition duration-300',
       className
     )}
   >
@@ -72,13 +72,13 @@ const Button = ({ href, aria, className, children }: ButtonProps) => (
 
 const PrevButton = ({ href, aria }: BaseButtonProps) => (
   <Button href={href} aria={aria} className="px-2">
-    <FontAwesomeIcon icon={faChevronLeft} className="mr-2 w-3" /> Prev
+    <ChevronLeftIcon className="mr-2 w-3" /> Prev
   </Button>
 )
 
 const NextButton = ({ href, aria }: BaseButtonProps) => (
   <Button href={href} aria={aria} className="px-2">
-    Next <FontAwesomeIcon icon={faChevronRight} className="ml-2 w-3" />
+    Next <ChevronRightIcon className="ml-2 w-3" />
   </Button>
 )
 

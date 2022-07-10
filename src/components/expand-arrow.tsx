@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { gsap } from 'gsap'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import ChevronRightIcon from './icons/chevron-right'
+
 import cn from '../lib/class-names'
 
 const CLASSES = cn(`flex 
@@ -49,12 +49,11 @@ const ExpandArrow = ({ expanded, hover = false }: IProps) => {
 
   return (
     <div ref={arrowEl} className={CLASSES}>
-      <FontAwesomeIcon
-        icon={faChevronRight} //{isExpanded ? "chevron-up" : "chevron-down"}
+      <ChevronRightIcon //{isExpanded ? "chevron-up" : "chevron-down"}
         className={cn(`w-3 animate-button`, [
           hover || _hover,
           '',
-          'text-gray-400',
+          'fill-gray-400',
         ])}
       />
     </div>

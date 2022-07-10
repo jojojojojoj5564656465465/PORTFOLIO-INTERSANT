@@ -6,7 +6,7 @@ export const TWITTER = '@politeinvestor'
 export const RECORDS_PER_PAGE = 6
 export const AUTHOR_LATEST_POSTS = 6
 export const GTAG = 'G-W3NDDXMDMP' //'UA-121311307-2'
-export const SITE_VERSION = '6.0.0'
+export const SITE_VERSION = '7.0.0'
 export const GENERIC_COVER_IMAGE = '/images/blog/generic.webp'
 export const IMAGEKIT_URL = 'https://ik.imagekit.io/fxx7i0e1mm/'
 

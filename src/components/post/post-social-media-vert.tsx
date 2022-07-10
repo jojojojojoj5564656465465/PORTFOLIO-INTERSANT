@@ -1,25 +1,22 @@
 import { getPostUrl } from '../../lib/articles'
-import cn from '../../lib/class-names'
 import IPost from '../../types/post'
-import FacebookIcon from '../icons/facebook'
-import LinkedInIcon from '../icons/linkedin'
-import TwitterIcon from '../icons/twitter'
 import BaseLink from '../link/base-link'
-
+import FacebookIcon from '../icons/facebook'
+import TwitterIcon from '../icons/twitter'
+import LinkedInIcon from '../icons/linkedin'
 export const CLS_TEXT_GRAY_HOVER = 'w-6'
 
 export const CLS_SOCIAL_ICON =
-  'fill-gray-300 hover:fill-blue-400 animate-button border border-gray-200 rounded-full p-2 mr-2'
+  'fill-gray-300 hover:fill-blue-400 animate-button border border-gray-200 rounded-full p-2 mb-2'
 
 interface IProps {
   post: IPost
-  className?: string
 }
 
-const PostSocialMedia = ({ post, className }: IProps) => {
+const PostSocialMediaVert = ({ post }: IProps) => {
   const url = getPostUrl(post.slug)
   return (
-    <section className={cn('flex flex-row items-center', className)}>
+    <section className="flex flex-col items-start">
       <BaseLink
         aria="Post article to Twitter"
         href={`https://twitter.com/intent/tweet?text=${post.fields.title}&url=${url}`}
@@ -47,4 +44,4 @@ const PostSocialMedia = ({ post, className }: IProps) => {
   )
 }
 
-export default PostSocialMedia
+export default PostSocialMediaVert

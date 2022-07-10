@@ -1,6 +1,7 @@
 ---
 import ContentLayout from "./ContentLayout.astro"
 import SeventyLayout from "./SeventyLayout.astro"
+import ThreeQuarterLayout from "./ThreeQuarterLayout.astro"
 
 export interface Props {
   title: string
@@ -14,10 +15,13 @@ export interface Props {
 let { title, description, tab, slug, isIndexed = true, className } = Astro.props
 ---
 
-<ContentLayout title={title} description={description} tab={tab} slug={slug} isIndexed={isIndexed} className={className}>
- 
-  <SeventyLayout>
-    <div slot="s1"><slot name="s1"/></div>
-   
-  </SeventyLayout>
+<ContentLayout title={title} description={description} tab={tab} slug={slug} isIndexed={isIndexed}
+  className={className}>
+
+  <ThreeQuarterLayout>
+    <div slot="s1">
+      <slot name="s1" />
+    </div>
+
+  </ThreeQuarterLayout>
 </ContentLayout>

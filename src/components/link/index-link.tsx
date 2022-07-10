@@ -1,10 +1,9 @@
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useRef, useEffect } from 'react'
 import cn from '../../lib/class-names'
 import BaseLink from './base-link'
 import { gsap } from 'gsap'
 import ILinkProps from '../../types/link-props'
+import ChevronRightIcon from '../icons/chevron-right'
 
 const IndexLink = ({ href, aria, className, children }: ILinkProps) => {
   const [hover, setHover] = useState(false)
@@ -39,8 +38,8 @@ const IndexLink = ({ href, aria, className, children }: ILinkProps) => {
     >
       {children}
 
-      <div ref={iconEl} className="w-3 ml-2">
-        <FontAwesomeIcon icon={faChevronRight} />
+      <div ref={iconEl} className="w-2 ml-2">
+        <ChevronRightIcon />
       </div>
     </BaseLink>
   )

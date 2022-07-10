@@ -3,7 +3,11 @@ import ILinkProps from '../../types/link-props'
 import IndexLink from './index-link'
 
 const BlueIndexLink = ({ href, aria, className, children }: ILinkProps) => (
-  <IndexLink href={href} aria={aria} className={cn('text-blue-400', className)}>
+  <IndexLink
+    href={href}
+    aria={aria}
+    className={cn('text-blue-400 fill-blue-500', className)}
+  >
     {children}
   </IndexLink>
 )

@@ -23,7 +23,7 @@ const BasePostImage = ({
     size={size}
     sizes={sizes}
     alt={post.fields.title}
-    className={cn('w-full rounded-lg', className)}
+    className={cn('w-full h-full object-cover', className)}
   />
 )
 

@@ -5,7 +5,6 @@ import IPreviewPost from '../../types/preview-post'
 import cn from '../../lib/class-names'
 import PostSectionLink from './post-section-link'
 import { useState } from 'react'
-import UnderlineLink from '../link/underline-link'
 import HTML from '../html'
 import PostTitleLink from './post-title-link'
 
@@ -47,7 +46,10 @@ const PostPreview = ({
       className={cn('overflow-hidden', className)}
     >
       {showImage && (
-        <PostImage post={post} className={cn('mb-4', imageClassName)} />
+        <PostImage
+          post={post}
+          className={cn('h-64 lg:h-72 mb-4', imageClassName)}
+        />
       )}
 
       <div className={innerClassName}>

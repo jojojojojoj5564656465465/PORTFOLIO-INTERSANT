@@ -26,7 +26,7 @@ const sectionMap = getSectionMap(posts)
 const pages = Math.floor((posts.length + RECORDS_PER_PAGE - 1) / RECORDS_PER_PAGE)
 ---
 
-<ArticleLayout title="Home" >
+<ArticleLayout title="Home">
 	<PostsPage posts={posts.slice(0, RECORDS_PER_PAGE)} page={1} pages={pages} showLatestPosts={true}
 		sectionMap={sectionMap} />
 </ArticleLayout>

@@ -33,12 +33,12 @@ const HeroPostSmall = ({
 
   return (
     <article
-      className={cn('grid grid-cols-1 md:grid-cols-3 gap-6', className)}
+      className={cn('grid grid-cols-1 md:grid-cols-3 md:gap-6', className)}
       onMouseEnter={_handleMouseEnter}
       onMouseLeave={_handleMouseLeave}
     >
       <div className="col-span-1">
-        <PostImage post={post} hover={hover} />
+        <PostImage post={post} hover={hover} className="h-48 lg:h-24" />
       </div>
 
       <div className="col-span-2">

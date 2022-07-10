@@ -1,5 +1,5 @@
 interface IBasePost {
-  //slug: string
+  slug: string
   //url: string
   index: number
   date: string

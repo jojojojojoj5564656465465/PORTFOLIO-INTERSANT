@@ -19,21 +19,25 @@ const PostImage = ({
   className,
 }: IProps) => {
   const image = (
-    <BasePostImage
-      post={post}
-      size={size}
-      sizes={sizes}
-      className={cn(
-        'rounded-lg transition duration-500 overflow-hidden',
-        [hover, 'brightness-80', 'hover:brightness-80'],
-        className
-      )}
-    />
+    <div
+      className={cn('relative overflow-hidden rounded-lg w-full', className)}
+    >
+      <BasePostImage
+        post={post}
+        size={size}
+        sizes={sizes}
+        className={cn('absolute', [
+          hover,
+          'brightness-80',
+          'hover:scale-102 transition-transform duration-300',
+        ])}
+      />
+    </div>
   )
 
-  if (post.url) {
+  if (post.slug) {
     return (
-      <BaseLink href={post.url} aria={post.fields.title}>
+      <BaseLink href={post.slug} aria={post.fields.title}>
         {image}
       </BaseLink>
     )

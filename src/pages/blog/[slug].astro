@@ -2,10 +2,16 @@
 import ArticleContainer from '../../components/article-container'
 import PostBody from '../../components/post/post-body'
 import PostDetails from '../../components/post/post-details'
+import PostDetailsHoz from '../../components/post/post-details-hoz'
 import PostHeader from '../../components/post/post-header'
+import PostSocialMedia from '../../components/post/post-social-media'
+import PostSocialMediaVert from '../../components/post/post-social-media-vert'
+import PostTags from '../../components/post/post-tags'
 import RelatedPosts from '../../components/post/related-posts'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import PostLayout from '../../layouts/PostLayout.astro'
 import SeventyLayout from '../../layouts/SeventyLayout.astro'
+import ThreeQuarterLayout from '../../layouts/ThreeQuarterLayout.astro'
 import { getAuthorMap } from '../../lib/api/author'
 import { getAllPosts, getSectionMap } from '../../lib/api/post'
 import markdownHtml from '../../lib/markdown-html'
@@ -108,18 +114,26 @@ const { post, relatedPosts, readMorePosts } = Astro.props
     <article>
       <PostHeader post={post} />
 
-      <ArticleContainer className="mt-48">
-        <SeventyLayout>
-          <div slot="s1">
-            <PostDetails post={post} className="block lg:hidden mb-8" />
+      <ArticleContainer className="my-48">
+        <PostDetailsHoz post={post} className="mb-4" />
 
-            <PostBody content={post.html} className="mb-32" />
-            
-          </div>
-          <div class="sticky top-0 mb-32" style="top: 40px" slot="s2">
+        <PostSocialMedia post={post} className="lg:hidden" />
+
+        <PostLayout className="mt-8">
+          <PostSocialMediaVert post={post} slot="left-col" />
+
+          <div slot="s1">
+          <PostBody content={post.html} className="text-justify" />
+          <PostTags post={post} className="mt-8" />
+        </div>
+          <!-- <div class="sticky top-0 mb-32" style="top: 40px" slot="s2">
             <PostDetails post={post} />
-          </div>
-        </SeventyLayout>
+          </div> -->
+
+          
+        </PostLayout>
+        
+        
       </ArticleContainer>
     </article>
 
