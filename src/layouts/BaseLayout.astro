@@ -25,7 +25,7 @@ let { title, description, tab, slug, isIndexed = true, className } = Astro.props
 
 <body>
   <header class="w-full border-b py-0 lg:py-2 border-gray-200">
-    <div class="lg:hidden">
+    <div class="block lg:hidden">
       <SmallHeader title={title} tab={tab} client:visible />
     </div>
     <LargeHeader title={title} tab={tab} />
