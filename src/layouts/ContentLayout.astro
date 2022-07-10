@@ -1,7 +1,6 @@
 ---
 import PageTitle from "../components/page-title"
 import ArticleLayout from "./ArticleLayout.astro"
-import cn from "../lib/class-names"
 
 export interface Props {
 	title: string
@@ -16,7 +15,7 @@ export interface Props {
 let { title, description, supertitle, tab, slug, isIndexed = true, className } = Astro.props
 ---
 
-<ArticleLayout title={title} description={description} tab={tab} isIndexed={isIndexed} slug={slug} className={cn("mt-16", className)}>
+<ArticleLayout title={title} description={description} tab={tab} isIndexed={isIndexed} slug={slug} className={className}>
 	<PageTitle title={title} subtitle={description} supertitle={supertitle} />
 	<slot />
 </ArticleLayout>

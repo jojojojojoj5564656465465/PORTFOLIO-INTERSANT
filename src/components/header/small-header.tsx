@@ -17,7 +17,7 @@ interface IProps {
 
 const SmallHeader = ({
   title,
-  tab = '',
+  tab,
   headerMode = 'light',
   className,
 }: IProps) => {

@@ -17,7 +17,7 @@ const LargeHeader = ({ title, tab }: IProps) => (
           <Logo className="w-48" />
         </BaseLink>
       </div>
-      <HeaderLinks title={title} />
+      <HeaderLinks title={title} tab={tab} />
 
       <div className="col-span-3" />
     </nav>

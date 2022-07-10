@@ -56,7 +56,7 @@ const BaseLink = ({
       <a
         href={href}
         aria-label={aria}
-        className={cn([underline, `hover:underline`], className)}
+        className={cn('m-0 p-0', [underline, `hover:underline`], className)}
         onClick={onClick}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}

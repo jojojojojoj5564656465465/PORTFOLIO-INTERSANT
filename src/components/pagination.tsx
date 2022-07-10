@@ -72,13 +72,13 @@ const Button = ({ href, aria, className, children }: ButtonProps) => (
 
 const PrevButton = ({ href, aria }: BaseButtonProps) => (
   <Button href={href} aria={aria} className="px-2">
-    <FontAwesomeIcon icon={faChevronLeft} className="mr-1 w-4" /> Prev
+    <FontAwesomeIcon icon={faChevronLeft} className="mr-2 w-3" /> Prev
   </Button>
 )
 
 const NextButton = ({ href, aria }: BaseButtonProps) => (
   <Button href={href} aria={aria} className="px-2">
-    Next <FontAwesomeIcon icon={faChevronRight} className="ml-1 w-4" />
+    Next <FontAwesomeIcon icon={faChevronRight} className="ml-2 w-3" />
   </Button>
 )
 

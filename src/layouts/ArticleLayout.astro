@@ -16,7 +16,7 @@ let { title, description, tab, slug, isIndexed, className } = Astro.props
 ---
 
 <BaseLayout title={title} description={description} tab={tab} slug={slug} isIndexed={isIndexed}>
-	<ArticleContainer className={cn('pb-12', className)}>
+	<ArticleContainer className={cn('py-12', className)}>
 		<slot />
 	</ArticleContainer>
 </BaseLayout>

@@ -1,0 +1,10 @@
+---
+import MarkdownDiv from '../components/MarkdownDiv.astro'
+import SideLayout from './SideLayout.astro'
+
+const { content } = Astro.props
+---
+
+<SideLayout title={content.title} description={content.subtitle}>
+  <MarkdownDiv slot="s1"><slot /></MarkdownDiv>
+</SideLayout>

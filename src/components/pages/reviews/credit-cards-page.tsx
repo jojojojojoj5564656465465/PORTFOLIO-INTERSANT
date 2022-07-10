@@ -1,11 +1,11 @@
-import StarRating from '../star-rating'
-import allcards from '../../../_content/reviews/credit-cards.json'
+import StarRating from '../../star-rating'
+import allcards from '../../../../_content/reviews/credit-cards.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import VCenterRow from '../v-center-row'
+import VCenterRow from '../../v-center-row'
 import { faThumbsDown, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
-import BaseCol from '../base-col'
-import ReviewExpandDiv from '../reviews/review-expand-div'
-import BlueIndexLink from '../link/blue-index-link'
+import BaseCol from '../../base-col'
+import ReviewExpandDiv from '../../reviews/review-expand-div'
+import BlueIndexLink from '../../link/blue-index-link'
 
 const ICON_CLS = 'w-4 ml-2'
 

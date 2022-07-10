@@ -1,7 +1,6 @@
-import portfolios from '../../../_content/reviews/portfolios.json'
-import SideLayout from '../../layouts/side-layout'
-import BlueIndexLink from '../../components/link/blue-index-link'
-import ReviewExpandDiv from '../../components/reviews/review-expand-div'
+import portfolios from '../../../../_content/reviews/portfolios.json'
+import BlueIndexLink from '../../link/blue-index-link'
+import ReviewExpandDiv from '../../reviews/review-expand-div'
 
 // interface Props {
 //   portfolio: any
@@ -110,24 +109,18 @@ const Portfolio = ({ portfolio, index }: IProps) => {
   )
 }
 
-const Page = () => {
+const PortfoliosPage = () => {
   return (
-    <SideLayout
-      title="Portfolios"
-      description="Simple porfolios to help you save for retirement. Customize for your needs."
-    >
-      <ul>
-        {portfolios.map((portfolio: any, index: number) => {
-          return (
-            <li key={index}>
-              <Portfolio index={index} portfolio={portfolio} />
-            </li>
-          )
-        })}
-      </ul>
-      <></>
-    </SideLayout>
+    <ul>
+      {portfolios.map((portfolio: any, index: number) => {
+        return (
+          <li key={index}>
+            <Portfolio index={index} portfolio={portfolio} />
+          </li>
+        )
+      })}
+    </ul>
   )
 }
 
-export default Page
+export default PortfoliosPage
