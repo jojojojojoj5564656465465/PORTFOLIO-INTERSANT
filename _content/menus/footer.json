@@ -9,9 +9,9 @@
   {
     "title": "Community",
     "links": [
-      { "name": "Contact Us", "url": "/contact" },
+      { "name": "Contact us", "url": "/contact" },
       { "name": "FAQ", "url": "/faq" },
-      { "name": "Support the Site", "url": "/support" }
+      { "name": "Support the site", "url": "/support" }
     ]
   }
 ]

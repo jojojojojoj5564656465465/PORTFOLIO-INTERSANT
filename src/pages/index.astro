@@ -7,17 +7,9 @@ import { getAuthorMap } from '../lib/api/author'
 import { getAllPosts, getSectionMap } from '../lib/api/post'
 import markdownHtml from '../lib/markdown-html'
 
-const authorMap = getAuthorMap(['id', 'name', 'title', 'picture'])
+const authorMap = getAuthorMap()
 
-const allPosts = getAllPosts([
-	'title',
-	'description',
-	'author',
-	'section',
-	'tags',
-	'hero',
-	'excerpt',
-])
+const allPosts = getAllPosts()
 
 // Get all the posts and add the authors in
 const posts = await Promise.all(allPosts.map(async post => {

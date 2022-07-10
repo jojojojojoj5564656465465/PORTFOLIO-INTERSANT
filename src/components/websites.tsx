@@ -1,12 +1,8 @@
-import React from 'react'
-import H2 from '../../components/h2'
-import ArticleLayout from '../../layouts/article-layout'
-import BlueLink from '../../components/link/blue-link'
-import PageTitle from '../../components/page-title'
-import websites from '../../../_content/reviews/websites.json'
-import TwoThirdsColLayout from '../../layouts/two-thirds-col-layout'
+import websites from '../../_content/reviews/websites.json'
+import H2 from './h2'
+import BlueLink from './link/blue-link'
 
-const renderWebsites = () => (
+const Websites = () => (
   <>
     {websites.map(
       (
@@ -17,7 +13,7 @@ const renderWebsites = () => (
         index: number
       ) => {
         return (
-          <div key={index} className="mb-16">
+          <div className="mb-16">
             <H2 className="mb-4">{div.name}</H2>
 
             <ul>
@@ -27,7 +23,7 @@ const renderWebsites = () => (
                   linkIndex: number
                 ) => {
                   return (
-                    <li key={linkIndex} className="mb-4">
+                    <li className="mb-4">
                       <BlueLink
                         href={link.url}
                         aria={`Visit ${link.name} site`}
@@ -48,22 +44,4 @@ const renderWebsites = () => (
   </>
 )
 
-const Page = () => {
-  return (
-    <ArticleLayout
-      title="Web Sites"
-      description="Interesting financial web sites."
-    >
-      <PageTitle
-        title="Websites"
-        subtitle="My favorite financial websites from the good guys"
-      />
-      <TwoThirdsColLayout>
-        <>{renderWebsites()}</>
-        <></>
-      </TwoThirdsColLayout>
-    </ArticleLayout>
-  )
-}
-
-export default Page
+export default Websites

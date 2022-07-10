@@ -1,7 +1,6 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: 'jit',
 	content: ['./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}'],
 	safelist: ['text-blue-500', 'hover:text-blue-500', 'text-red-500'],
   theme: {

@@ -8,4 +8,6 @@ export interface Props {
 const { className } = Astro.props
 ---
 
-<section class={cn('markdown', className)}><slot/></section>
+<section class={cn('markdown', className)}>
+  <slot />
+</section>

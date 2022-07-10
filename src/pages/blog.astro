@@ -1,27 +1,17 @@
 ---
 
-import { getAllPosts } from '../lib/api/post'
-import { getAuthorMap } from '../lib/api/author'
-import { RECORDS_PER_PAGE } from '../constants'
 import PostsPage from '../components/pages/posts-page'
-import markdownHtml from '../lib/markdown-html'
-import IPreviewPost from '../types/preview-post'
+import { RECORDS_PER_PAGE } from '../constants'
 import ArticleLayout from '../layouts/ArticleLayout.astro'
+import { getAuthorMap } from '../lib/api/author'
+import { getAllPosts } from '../lib/api/post'
+import markdownHtml from '../lib/markdown-html'
 
 
-const authorMap = getAuthorMap(['id', 'name', 'title', 'picture'])
+const authorMap = getAuthorMap()
 
 // Get all the posts and add the authors in
-let posts = getAllPosts([
-  'title',
-  'description',
-  'author',
-  'section',
-  'tags',
-  'related',
-  'hero',
-  'excerpt',
-])
+let posts = getAllPosts()
 
 //await generateSiteMap(posts)
 //await generateRSS(posts)

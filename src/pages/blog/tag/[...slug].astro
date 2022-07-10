@@ -10,21 +10,9 @@ import { getUrlFriendlyTag } from '../../../lib/tags'
 import { getTagBaseUrl } from '../../../lib/urls'
 
 export async function getStaticPaths() {
-  const authorMap = getAuthorMap(['id', 'name', 'title', 'picture'])
+  const authorMap = getAuthorMap()
 
-  const allPosts = await Promise.all(getAllPosts([
-    'title',
-    'description',
-    'date',
-    'slug',
-    'url',
-    'author',
-    'tag',
-    'tags',
-    'content',
-    'ogImage',
-    'hero',
-  ]).map(async post => {
+  const allPosts = await Promise.all(getAllPosts().map(async post => {
     return {
       ...post,
       excerpt: await markdownHtml(post.fields.excerpt || ''),

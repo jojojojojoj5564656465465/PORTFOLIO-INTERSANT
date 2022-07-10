@@ -1,0 +1,65 @@
+---
+import { faThumbsDown,faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import allBrokerages from '../../../_content/reviews/brokerages.json'
+import BaseCol from '../../components/base-col'
+import BlueIndexLink from '../../components/link/blue-index-link'
+import ReviewExpandDiv from '../../components/reviews/review-expand-div'
+import StarRating from '../../components/star-rating'
+import VCenterRow from '../../components/v-center-row'
+import SideLayout from '../../layouts/SideLayout.astro'
+---
+
+  <SideLayout title="Brokerages" description="Where to investor your money">
+      <div slot="s1">
+        {allBrokerages.map(brokerage => {
+          return (
+            <ReviewExpandDiv title={brokerage.name}>
+              <>
+                <p class="mt-4">{brokerage.description}</p>
+                <div class="grid grid-cols-1 md:grid-cols-4 md:gap-8 mt-8">
+                  <BaseCol className="items-center md:items-start mb-8">
+                    <StarRating rating={brokerage.rating} />
+                    <BlueIndexLink
+                      href={brokerage.url}
+                      aria={`Visit ${brokerage.name} site`}
+                      className="mt-4"
+                    >
+                      Visit website
+                    </BlueIndexLink>
+                  </BaseCol>
+                  <div class="col-span-3 grid grid-cols-1 md:grid-cols-2 md:gap-8">
+                    <div>
+                      <VCenterRow
+                        center={true}
+                        className="text-emerald-400 pb-2"
+                      >
+                        <h4 class="mr-2">Pros</h4>
+                        <FontAwesomeIcon icon={faThumbsUp} className="w-4 ml-2" />
+                      </VCenterRow>
+                      <ul class="list-outside list-disc ml-2 p-2">
+                        {brokerage.pros.map((pro: string, index: number) => {
+                          return <li>{pro}</li>
+                        })}
+                      </ul>
+                    </div>
+                    <div>
+                      <VCenterRow center={true} className="text-rose-400 pb-2">
+                        <h4 class="mr-2">Cons</h4>
+                        <FontAwesomeIcon icon={faThumbsDown} className="w-4 ml-2" />
+                      </VCenterRow>
+
+                      <ul class="list-outside list-disc ml-2 p-2">
+                        {brokerage.cons.map((con: string, index: number) => {
+                          return <li>{con}</li>
+                        })}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </>
+            </ReviewExpandDiv>
+          )
+        })}
+</div>
+      </SideLayout>

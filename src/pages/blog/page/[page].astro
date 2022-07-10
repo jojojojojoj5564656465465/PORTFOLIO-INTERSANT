@@ -8,17 +8,9 @@ import ArticleLayout from '../../../layouts/ArticleLayout.astro'
 import markdownHtml from '../../../lib/markdown-html'
 
 export async function getStaticPaths({ paginate }) {
-  const authorMap = getAuthorMap(['id', 'name', 'title', 'picture'])
+  const authorMap = getAuthorMap()
 
-  let allPosts = getAllPosts([
-    'title',
-    'description',
-    'author',
-    'section',
-    'tags',
-    'hero',
-    'excerpt',
-  ])
+  let allPosts = getAllPosts()
 
   const posts = await Promise.all(
     allPosts.map(async post => {

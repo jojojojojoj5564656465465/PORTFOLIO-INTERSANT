@@ -1,7 +1,5 @@
 import { SECTIONS } from '../../constants'
-import IPreviewPost from '../../types/preview-post'
 import ISectionMap from '../../types/section-map'
-import ApplePagination from '../apple-pagination'
 import Pagination from '../pagination'
 import HeadPosts from '../post/head-posts'
 import HeroPosts from '../post/hero-posts'
