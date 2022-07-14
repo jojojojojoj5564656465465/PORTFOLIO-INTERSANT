@@ -1,17 +1,18 @@
+import React from 'react'
 import cn from '../lib/class-names'
 import IChildrenProps from '../types/children-props'
-import IStyleMap from '../types/style-map'
 
 interface IProps extends IChildrenProps {
   center?: boolean
-  style?: IStyleMap
   onClick?: any
   onMouseEnter?: any
   onMouseLeave?: any
   tabIndex?: number
+  tag?: string
 }
 
 const BaseCol = ({
+  tag = 'div',
   center = false,
   className = '',
   onClick,
@@ -19,16 +20,18 @@ const BaseCol = ({
   onMouseLeave,
   tabIndex,
   children,
-}: IProps) => (
-  <div
-    className={cn('flex flex-col', [center, 'justify-center'], className)}
-    onClick={onClick}
-    onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}
-    tabIndex={tabIndex}
-  >
-    {children}
-  </div>
-)
+}: IProps) => {
+  return React.createElement(
+    tag,
+    {
+      className: cn('flex flex-col', [center, 'justify-center'], className),
+      onClick: onClick,
+      onMouseEnter: onMouseEnter,
+      onMouseLeave: onMouseLeave,
+      tabIndex: tabIndex,
+    },
+    children
+  )
+}
 
 export default BaseCol

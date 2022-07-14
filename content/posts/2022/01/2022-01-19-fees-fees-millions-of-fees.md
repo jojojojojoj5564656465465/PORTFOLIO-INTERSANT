@@ -7,7 +7,7 @@ readtime: "1 min"
 section: "Guides & Tutorials"
 tags: "Finance, Investments"
 hero: "bees"
-heroCaption: "Love bees, hate fees."
+heroCaption: "Love bees, hate fees"
 status: "published"
 related: ""
 ---
@@ -91,6 +91,11 @@ Glad you asked. Here a few funds to give you an idea of what high qualit low cos
 
 ## Take home
 
-- Load fees are charged by subpar companies for overpriced funds. All the good investments you'll ever need can bought for $0 at a reputable brokerage.
-- You can't escape the expense ratio (it does cost a company to run a fund), but you can minimize it so it's practically non-existant.
-- Try my [interactive fee calculator](/calculators/fees).
+<div class="conclusions">
+<ol>
+<li>Load fees are charged by subpar companies for overpriced funds. All the good investments you'll ever need can bought for $0 at a reputable brokerage.</li>
+<li>You can't escape the expense ratio (it does cost a company to run a fund), but you can minimize it so it's practically non-existant.</li>
+<li>Try my [interactive fee calculator](/calculators/fees).</li>
+</ol>
+</div>
+

@@ -1,10 +1,10 @@
 import cn from '../../lib/class-names'
+import IBasePost from '../../types/base-post'
 import IClassProps from '../../types/class-props'
-import IPost from '../../types/post'
 import BasePostImage from './base-post-image'
 
 interface IProps extends IClassProps {
-  post: IPost
+  post: IBasePost
   size?: number[]
   sizes?: number[]
 }

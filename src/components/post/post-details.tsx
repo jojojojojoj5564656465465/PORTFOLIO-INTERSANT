@@ -1,11 +1,11 @@
-import IPost from '../../types/post'
+import IPreviewPost from '../../types/preview-post'
 import Avatar from '../avatar'
 import DateFormatter from '../date-formatter'
 import PostSocialMedia from './post-social-media'
 import PostTags from './post-tags'
 
 interface IProps {
-  post: IPost
+  post: IPreviewPost
   className?: string
 }
 

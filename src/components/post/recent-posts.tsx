@@ -1,8 +1,7 @@
 import PostPreview from './post-preview'
-import IPost from '../../types/post'
+import IPostsProps from '../../types/posts-props'
 
-interface IProps {
-  posts: IPost[]
+interface IProps extends IPostsProps {
   title?: string
 }
 

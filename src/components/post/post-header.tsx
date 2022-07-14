@@ -4,13 +4,14 @@ import PostSectionLink from './post-section-link'
 import HeroImageCaption from './hero-image-caption'
 import HeroImage from './hero-image'
 import ArticleContainer from '../article-container'
+import IBasePost from '../../types/base-post'
 
 interface IProps {
-  post: IPost
+  post: IBasePost
 }
 
 const PostHeader = ({ post }: IProps) => (
-  <div className="bg-gray-800">
+  <section className="bg-gray-800">
     <ArticleContainer className="pt-8 lg:pt-16">
       <div className="w-6/10">
         {post.fields.section && <PostSectionLink post={post} />}
@@ -24,10 +25,10 @@ const PostHeader = ({ post }: IProps) => (
 
       <div className="lg:pt-8 -mb-32">
         <HeroImage post={post} />
-        {post.fields.hero.includes(';') && <HeroImageCaption post={post} />}
+        {post.fields.heroCaption && <HeroImageCaption post={post} />}
       </div>
     </ArticleContainer>
-  </div>
+  </section>
 )
 
 export default PostHeader

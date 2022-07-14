@@ -1,11 +1,11 @@
 import cn from '../../lib/class-names'
+import IClassProps from '../../types/class-props'
 import IPreviewPost from '../../types/preview-post'
 import VCenterRow from '../v-center-row'
 import PostTagLinkBlue from './post-tag-link-blue'
 
-interface IProps {
+interface IProps extends IClassProps {
   post: IPreviewPost
-  className?: string
 }
 
 const PostTags = ({ post, className }: IProps) => (

@@ -1,11 +1,10 @@
 import { ReactElement } from 'react'
 import cn from '../../lib/class-names'
-import IClassProps from '../../types/class-props'
+import IChildProps from '../../types/child-props'
 import ExpandDiv from '../expand-div'
 
-interface IProps extends IClassProps {
+interface IProps extends IChildProps {
   title: string
-  children: ReactElement
 }
 
 const ReviewExpandDiv = ({ title, className, children }: IProps) => (

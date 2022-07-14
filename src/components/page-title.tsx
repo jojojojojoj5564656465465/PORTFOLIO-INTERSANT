@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import cn from '../lib/class-names'
 import IChildrenProps from '../types/children-props'
 
@@ -15,10 +14,13 @@ const PageTitle = ({
   className,
   children,
 }: IProps) => (
-  <header className={cn('mb-12', className)}>
-    {supertitle && (
-      <h2 className="text-lg mb-2 font-light text-gray-500">{supertitle}</h2>
+  <header
+    className={cn(
+      'mb-8 md:mb-16 pb-8 md:pb-16 border-b border-gray-200',
+      className
     )}
+  >
+    {supertitle && <h2 className="text-lg mb-1 text-gray-400">{supertitle}</h2>}
 
     <h1 className="text-4xl lg:text-5xl font-bold">{title}</h1>
 

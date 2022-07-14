@@ -77,10 +77,7 @@ const Footer = () => (
       </div>
     </ArticleContainer>
 
-    <ArticleContainer
-      className="py-6"
-      style={{ backgroundColor: 'rgb(255,255,255,0.05)' }}
-    >
+    <ArticleContainer className="py-6">
       <VCenterRow className="text-xs justify-between">
         <span>{getCopyright()}</span>
         <ul className="flex flex-row gap-x-4">

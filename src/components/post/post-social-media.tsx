@@ -1,6 +1,7 @@
 import { getPostUrl } from '../../lib/articles'
 import cn from '../../lib/class-names'
-import IPost from '../../types/post'
+import IBasePost from '../../types/base-post'
+import IClassProps from '../../types/class-props'
 import FacebookIcon from '../icons/facebook'
 import LinkedInIcon from '../icons/linkedin'
 import TwitterIcon from '../icons/twitter'
@@ -11,9 +12,8 @@ export const CLS_TEXT_GRAY_HOVER = 'w-6'
 export const CLS_SOCIAL_ICON =
   'fill-gray-300 hover:fill-blue-400 animate-button border border-gray-200 rounded-full p-2 mr-2'
 
-interface IProps {
-  post: IPost
-  className?: string
+interface IProps extends IClassProps {
+  post: IBasePost
 }
 
 const PostSocialMedia = ({ post, className }: IProps) => {

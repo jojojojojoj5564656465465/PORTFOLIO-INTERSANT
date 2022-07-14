@@ -1,12 +1,11 @@
 import { getSectionUrl } from '../../lib/urls'
-import IPost from '../../types/post'
+import IPostsProps from '../../types/posts-props'
 import BaseLink from '../link/base-link'
 import BaseSectionPostsVert from './base-section-posts-vert'
 import PostsHeader from './posts-header'
 
-interface IProps {
+interface IProps extends IPostsProps {
   section: string
-  posts: IPost[]
   rightMode?: boolean
 }
 

@@ -4,8 +4,7 @@ import IStyleMap from '../types/style-map'
 import BaseRow from './base-row'
 
 interface IProps extends IChildrenProps {
-  center?: boolean
-  style?: IStyleMap
+  tag?: string
   tabIndex?: number
   onClick?: any
   onKeyDown?: any
@@ -14,9 +13,8 @@ interface IProps extends IChildrenProps {
 }
 
 const VCenterRow = ({
-  center = false,
+  tag = 'div',
   className = '',
-  style,
   tabIndex,
   onClick,
   onKeyDown,
@@ -26,9 +24,8 @@ const VCenterRow = ({
 }: IProps) => {
   return (
     <BaseRow
-      center={center}
+      tag={tag}
       className={cn('items-center', className)}
-      style={style}
       tabIndex={tabIndex}
       onClick={onClick}
       onKeyDown={onKeyDown}

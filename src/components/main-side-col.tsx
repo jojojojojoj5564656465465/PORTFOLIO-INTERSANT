@@ -13,9 +13,9 @@ interface IProps {
 const MainSideCol = ({ className, cls1ext, cls2ext, children }: IProps) => {
   return (
     <WrapRow className={className}>
-      <div className={cn(`w-full 2xl:w-3/4`, cls1ext)}>{children[0]}</div>
+      <div className={cn(`w-full 2xl:w-75/100`, cls1ext)}>{children[0]}</div>
 
-      <div className={cn(`w-full 2xl:w-1/4`, cls2ext)}>{children[1]}</div>
+      <div className={cn(`w-full 2xl:w-25/100`, cls2ext)}>{children[1]}</div>
     </WrapRow>
   )
 }

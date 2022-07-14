@@ -1,10 +1,9 @@
 import cn from '../../lib/class-names'
-import IPost from '../../types/post'
+import IPostsProps from '../../types/posts-props'
 import BaseCol from '../base-col'
 import PostPreview from './post-preview'
 
-interface IProps {
-  posts: IPost[]
+interface IProps extends IPostsProps {
   rightMode?: boolean
 }
 

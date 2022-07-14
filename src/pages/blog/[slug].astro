@@ -1,5 +1,6 @@
 ---
 import ArticleContainer from '../../components/article-container'
+import BaseCol from '../../components/base-col'
 import PostBody from '../../components/post/post-body'
 import PostDetails from '../../components/post/post-details'
 import PostDetailsHoz from '../../components/post/post-details-hoz'
@@ -114,26 +115,27 @@ const { post, relatedPosts, readMorePosts } = Astro.props
     <article>
       <PostHeader post={post} />
 
-      <ArticleContainer className="my-48">
-        <PostDetailsHoz post={post} className="mb-4" />
+      <ArticleContainer className="my-40">
+        <BaseCol className="gap-y-4">
+          <PostDetailsHoz post={post} />
 
-        <PostSocialMedia post={post} className="lg:hidden" />
+          <PostSocialMedia post={post} className="lg:hidden" />
 
-        <PostLayout className="mt-8">
-          <PostSocialMediaVert post={post} slot="left-col" />
+          <PostLayout>
+            <PostSocialMediaVert post={post} slot="left" />
 
-          <div slot="s1">
-          <PostBody html={post.html} className="text-justify" />
-          <PostTags post={post} className="mt-8" />
-        </div>
-          <!-- <div class="sticky top-0 mb-32" style="top: 40px" slot="s2">
+            <BaseCol tag='section' className='gap-y-8' slot="main">
+              <PostBody html={post.html} className="text-justify" />
+              <PostTags post={post} />
+            </BaseCol>
+            <!-- <div class="sticky top-0 mb-32" style="top: 40px" slot="s2">
             <PostDetails post={post} />
           </div> -->
 
-          
-        </PostLayout>
-        
-        
+
+          </PostLayout>
+        </BaseCol>
+
       </ArticleContainer>
     </article>
 

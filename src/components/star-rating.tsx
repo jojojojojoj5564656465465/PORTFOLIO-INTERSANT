@@ -1,5 +1,6 @@
 import StarIcon from './icons/star'
 import HalfStarIcon from './icons/half-star'
+import BaseRow from './base-row'
 
 interface IProps {
   rating: number
@@ -39,7 +40,9 @@ const StarRating = ({ rating }: IProps) => {
   //}
 
   return (
-    <ul className="flex flex-row flex-nowrap gap-1 fill-amber-300">{stars}</ul>
+    <BaseRow tag="ul" className="gap-1 fill-amber-300">
+      {stars}
+    </BaseRow>
   )
 }
 

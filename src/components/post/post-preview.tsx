@@ -7,10 +7,10 @@ import PostSectionLink from './post-section-link'
 import { useState } from 'react'
 import HTML from '../html'
 import PostTitleLink from './post-title-link'
+import IClassProps from '../../types/class-props'
 
-interface IProps {
+interface IProps extends IClassProps {
   post: IPreviewPost
-  className?: string
   imageClassName?: string
   headerClassName?: string
   innerClassName?: string

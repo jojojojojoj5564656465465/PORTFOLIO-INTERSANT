@@ -1,10 +1,6 @@
-import { ReactNode } from 'react'
+import IChildrenProps from '../../types/children-props'
 
-interface IProps {
-  children?: ReactNode
-}
-
-const PostsHeader = ({ children }: IProps) => {
+const PostsHeader = ({ children }: IChildrenProps) => {
   return (
     <h2 className="text-lg font-bold border-t-gray-700 border-t-4 border-b-gray-300 border-b py-2 mb-8">
       {children}

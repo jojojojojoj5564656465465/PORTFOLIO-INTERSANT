@@ -1,9 +1,9 @@
 import cn from '../../lib/class-names'
+import IBasePost from '../../types/base-post'
 import IClassProps from '../../types/class-props'
-import IPost from '../../types/post'
 
 interface IProps extends IClassProps {
-  post: IPost
+  post: IBasePost
 }
 
 const HeroImageCaption = ({ post, className }: IProps) => (

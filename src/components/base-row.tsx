@@ -1,41 +1,38 @@
-import { ReactNode } from 'react'
+import React from 'react'
 import cn from '../lib/class-names'
-import IStyleMap from '../types/style-map'
+import IChildrenProps from '../types/children-props'
 
-interface IProps {
-  center?: boolean
-  className?: string
-  style?: IStyleMap
+interface IProps extends IChildrenProps {
+  tag?: string
   onClick?: any
   onKeyDown?: any
   onMouseEnter?: any
   onMouseLeave?: any
   tabIndex?: number
-  children?: ReactNode
 }
 
 const BaseRow = ({
-  center = false,
+  tag = 'div',
   className = '',
-  style,
   onClick,
   onKeyDown,
   onMouseEnter,
   onMouseLeave,
   tabIndex,
   children,
-}: IProps) => (
-  <div
-    className={cn('flex flex-row', [center, 'justify-center'], className)}
-    style={style}
-    onClick={onClick}
-    onKeyDown={onKeyDown}
-    onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}
-    tabIndex={tabIndex}
-  >
-    {children}
-  </div>
-)
+}: IProps) => {
+  return React.createElement(
+    tag,
+    {
+      className: cn('flex flex-row', className),
+      onClick: onClick,
+      onKeyDown: onKeyDown,
+      onMouseEnter: onMouseEnter,
+      onMouseLeave: onMouseLeave,
+      tabIndex: tabIndex,
+    },
+    children
+  )
+}
 
 export default BaseRow

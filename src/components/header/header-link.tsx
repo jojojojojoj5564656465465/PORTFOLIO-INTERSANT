@@ -7,7 +7,7 @@ import ILink from '../../types/link'
 const DURATION = 0.4
 const BAR_WIDTH = '2px'
 export const LINK_CLS =
-  'block relative font-semibold tracking-tight py-2 animate-button'
+  'block relative font-semibold tracking-tight py-2 animate-button whitespace-nowrap'
 
 type IProps = {
   link: ILink

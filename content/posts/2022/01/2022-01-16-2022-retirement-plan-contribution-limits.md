@@ -44,6 +44,11 @@ The following table summarizes the contribution limits. What do you qualify for?
 
 ## Highlights for 2022
 
-- 401(k)/403(b) Employee Contribution Limit for those under 50 went from **$19,500** to **$20,500**. Yay.
-- Traditional and Roth IRA Contribution Limits stayed the same. Boo.
-- Social Security benefits are projected to increase by 6.2%. Yay.
+<div class="conclusions">
+<ol>
+<li>401(k)/403(b) Employee Contribution Limit for those under 50 went from **$19,500** to **$20,500**. Yay.</li>
+<li>Traditional and Roth IRA Contribution Limits stayed the same. Boo.</li>
+<li>Social Security benefits are projected to increase by 6.2%. Yay.
+</li>
+</ol>
+</div>

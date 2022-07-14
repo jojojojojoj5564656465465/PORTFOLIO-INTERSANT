@@ -23,15 +23,15 @@ const Avatar = ({
   const href = getAuthorUrl(author.fields.name)
 
   return (
-    <VCenterRow className={className}>
+    <VCenterRow className={cn('gap-x-3', className)}>
       <BaseLink
         href={href}
-        aria={`Click to read more information about ${author.fields.name}`}
+        aria={`Click to read more about ${author.fields.name}`}
         className={cn('block', [isSmall, 'w-10 h-10', 'w-16 h-16'])}
       >
         <AvatarImage author={author} />
       </BaseLink>
-      <BaseCol className="ml-3">
+      <BaseCol className="gap-y-1">
         <UnderlineLink
           href={href}
           aria={`Click to read more information about ${author.fields.name}`}

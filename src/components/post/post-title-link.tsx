@@ -1,10 +1,10 @@
 import cn from '../../lib/class-names'
 import IBasePost from '../../types/base-post'
+import IClassProps from '../../types/class-props'
 import ToBlueLink from '../link/to-blue-link'
 
-interface IProps {
+interface IProps extends IClassProps {
   post: IBasePost
-  className?: string
 }
 
 const PostTitleLink = ({ post, className }: IProps) => (

@@ -1,3 +1,4 @@
+import cn from '../lib/class-names'
 import IChildrenProps from '../types/children-props'
 import BaseRow from './base-row'
 
@@ -18,8 +19,7 @@ const HCenterRow = ({
 }: IProps) => {
   return (
     <BaseRow
-      center={true}
-      className={className}
+      className={cn('justify-center', className)}
       tabIndex={tabIndex}
       onClick={onClick}
       onMouseEnter={onMouseEnter}

@@ -101,7 +101,7 @@ h6 {
 }
 
 .post .conclusions {
-  @apply bg-gray-700 rounded-lg p-5 text-gray-100 mt-16 mb-4 text-base;
+  @apply bg-gray-700 rounded-lg p-5 text-gray-100 mt-8 mb-4 text-base;
 }
 
 .post .conclusions ol,

@@ -6,6 +6,7 @@ import ChevronRightIcon from './icons/chevron-right'
 import BaseLink from './link/base-link'
 import BlueLink from './link/blue-link'
 import ToBlueLink from './link/to-blue-link'
+import VCenterRow from './v-center-row'
 
 const makeUrl = (root: string, page: number) => {
   return `${root}/page/${page}`
@@ -145,7 +146,7 @@ const Pagination = ({ page, pages, root = '/blog' }: IProps) => {
   const nextPage = Math.min(pages, page + 1)
 
   return (
-    <ul className="flex flex-row items-center gap-x-1 mx-auto">
+    <VCenterRow tag="ul" className="gap-x-1 mx-auto">
       <li>
         <PrevButton href={makeUrl(root, prevPage)} />
       </li>
@@ -171,7 +172,7 @@ const Pagination = ({ page, pages, root = '/blog' }: IProps) => {
       <li>
         <NextButton href={makeUrl(root, nextPage)} />
       </li>
-    </ul>
+    </VCenterRow>
   )
 }
 
