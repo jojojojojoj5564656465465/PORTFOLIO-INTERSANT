@@ -60,7 +60,7 @@ const PostPreview = ({
         <PostTitleLink post={post} className={headerClassName} />
 
         {showDescription && (
-          <HTML content={post.excerpt} className="text-gray-500 mt-4" />
+          <HTML html={post.excerpt} className="text-gray-500 mt-4" />
         )}
 
         {showAvatar && (

@@ -2,6 +2,8 @@ import cn from '../../lib/class-names'
 import IPost from '../../types/post'
 import Avatar from '../avatar'
 import DateFormatter from '../date-formatter'
+import HCenterRow from '../h-center-row'
+import VCenterRow from '../v-center-row'
 import PostSocialMedia from './post-social-media'
 import PostTags from './post-tags'
 
@@ -34,11 +36,11 @@ interface IProps {
 
 const PostDetailsHoz = ({ post, className }: IProps) => (
   <section className={cn('border-b-2 pb-4 border-gray-200', className)}>
-    <div className="flex flex-row justify-between items-center">
+    <VCenterRow className="justify-between">
       <Avatar author={post.authors[0]} showTitle={true} />
 
       <DateFormatter date={post.date} />
-    </div>
+    </VCenterRow>
 
     {/* <PostTags post={post} /> */}
 

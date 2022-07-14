@@ -1,15 +1,18 @@
 import cn from '../lib/class-names'
 import { getUrlFriendlyTag } from '../lib/tags'
+import IClassProps from '../types/class-props'
 import IPostAuthor from '../types/post-author'
 import BaseImage from './base-image'
 
-interface IProps {
+export interface IAvatarProps extends IClassProps {
   author: IPostAuthor
+}
+
+interface IProps extends IAvatarProps {
   src?: string
   size?: [number, number]
   sizes?: number[]
   root?: string
-  className?: string
 }
 
 const AvatarImage = ({

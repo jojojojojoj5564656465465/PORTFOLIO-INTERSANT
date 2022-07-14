@@ -1,10 +1,11 @@
-interface IProps {
-  content: string
-  className?: string
+import IClassProps from '../types/class-props'
+
+export interface IHtmlProps extends IClassProps {
+  html: string
 }
 
-const HTML = ({ content, className }: IProps) => (
-  <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
+const HTML = ({ html, className }: IHtmlProps) => (
+  <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
 )
 
 export default HTML

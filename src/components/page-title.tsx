@@ -1,12 +1,11 @@
 import { ReactNode } from 'react'
 import cn from '../lib/class-names'
+import IChildrenProps from '../types/children-props'
 
-interface IProps {
+interface IProps extends IChildrenProps {
   title: string
   supertitle?: string
   subtitle?: string
-  className?: string
-  children?: ReactNode
 }
 
 const PageTitle = ({

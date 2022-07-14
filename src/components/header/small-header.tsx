@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import VCenterRow from '../v-center-row'
 import BaseLink from '../link/base-link'
 import MenuOverlay from './menu-overlay'
 import MenuOpenButton from './menu-button-open'
@@ -7,12 +6,12 @@ import MenuOpenButton from './menu-button-open'
 import Logo from '../logo'
 import LogoDark from '../logo-dark'
 import HCenterRow from '../h-center-row'
+import IClassProps from '../../types/class-props'
 
-interface IProps {
+interface IProps extends IClassProps {
   title: string
   tab?: string
   headerMode?: string
-  className?: string
 }
 
 const SmallHeader = ({ title, tab, headerMode = 'light' }: IProps) => {

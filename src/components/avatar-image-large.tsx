@@ -1,12 +1,6 @@
-import IPostAuthor from '../types/post-author'
-import AvatarImage from './avatar-image'
+import AvatarImage, { IAvatarProps } from './avatar-image'
 
-interface IProps {
-  author: IPostAuthor
-  className?: string
-}
-
-const AvatarImageLarge = ({ author, className }: IProps) => (
+const AvatarImageLarge = ({ author, className }: IAvatarProps) => (
   <AvatarImage
     author={author}
     size={[240, 240]}

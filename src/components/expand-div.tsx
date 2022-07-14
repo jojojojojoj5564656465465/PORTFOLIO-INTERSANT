@@ -1,13 +1,12 @@
 import { ReactElement } from 'react'
-import IClassProps from '../types/class-props'
+import IChildProps from '../types/child-props'
 import Expand from './expand'
 import UnderlineLink from './link/underline-link'
 
-interface IProps extends IClassProps {
+interface IProps extends IChildProps {
   title: string
   href?: string
   isExpanded?: boolean
-  children: ReactElement
 }
 
 const ExpandDiv = ({

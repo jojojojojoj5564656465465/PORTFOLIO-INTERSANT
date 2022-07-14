@@ -1,4 +1,4 @@
-interface IBasePost {
+export default interface IBasePost {
   slug: string
   //url: string
   index: number
@@ -17,5 +17,3 @@ interface IBasePost {
     tags: string[]
   }
 }
-
-export default IBasePost

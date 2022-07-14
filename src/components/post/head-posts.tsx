@@ -1,8 +1,7 @@
-import IPreviewPost from '../../types/preview-post'
+import IPostsProps from '../../types/posts-props'
 import PostPreview from './post-preview'
 
-interface IProps {
-  posts: IPreviewPost[]
+interface IProps extends IPostsProps {
   showAvatar?: boolean
 }
 

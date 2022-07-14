@@ -1,10 +1,9 @@
-import React from 'react'
 import cn from '../../lib/class-names'
+import IClassProps from '../../types/class-props'
 import IPost from '../../types/post'
 
-interface IProps {
+interface IProps extends IClassProps {
   post: IPost
-  className?: string
 }
 
 const HeroImageCaption = ({ post, className }: IProps) => (

@@ -1,5 +1,3 @@
-interface ISectionMap {
+export default interface ISectionMap {
   [key: string]: any[]
 }
-
-export default ISectionMap

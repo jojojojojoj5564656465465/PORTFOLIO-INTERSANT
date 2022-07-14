@@ -1,14 +1,14 @@
 import cn from '../../lib/class-names'
 import IBasePost from '../../types/base-post'
+import IClassProps from '../../types/class-props'
 import BaseImage from '../base-image'
 
-interface IProps {
+interface IProps extends IClassProps {
   post: IBasePost
   root?: string
   size?: number[]
   sizes?: number[]
   lazy?: boolean
-  className?: string
 }
 
 const BasePostImage = ({

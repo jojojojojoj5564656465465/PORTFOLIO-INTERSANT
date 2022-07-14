@@ -1,5 +1,6 @@
 import cn from '../lib/class-names'
 import { getAuthorUrl } from '../lib/urls'
+import IClassProps from '../types/class-props'
 import IPostAuthor from '../types/post-author'
 import AvatarImage from './avatar-image'
 import BaseCol from './base-col'
@@ -7,11 +8,10 @@ import BaseLink from './link/base-link'
 import UnderlineLink from './link/underline-link'
 import VCenterRow from './v-center-row'
 
-interface IProps {
+interface IProps extends IClassProps {
   author: IPostAuthor
   showTitle?: boolean
   isSmall?: boolean
-  className?: string
 }
 
 const Avatar = ({

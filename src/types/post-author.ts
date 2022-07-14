@@ -1,4 +1,4 @@
-interface IPostAuthor {
+export default interface IPostAuthor {
   slug: string
   fields: {
     id: string
@@ -8,5 +8,3 @@ interface IPostAuthor {
     content: string
   }
 }
-
-export default IPostAuthor

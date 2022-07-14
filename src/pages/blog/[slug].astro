@@ -123,7 +123,7 @@ const { post, relatedPosts, readMorePosts } = Astro.props
           <PostSocialMediaVert post={post} slot="left-col" />
 
           <div slot="s1">
-          <PostBody content={post.html} className="text-justify" />
+          <PostBody html={post.html} className="text-justify" />
           <PostTags post={post} className="mt-8" />
         </div>
           <!-- <div class="sticky top-0 mb-32" style="top: 40px" slot="s2">

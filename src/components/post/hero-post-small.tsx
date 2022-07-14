@@ -7,12 +7,12 @@ import cn from '../../lib/class-names'
 import HTML from '../html'
 import IPreviewPost from '../../types/preview-post'
 import PostTitleLink from './post-title-link'
+import IClassProps from '../../types/class-props'
 
-interface IProps {
+interface IProps extends IClassProps {
   post: IPreviewPost
   showDescription?: boolean
   showAvatar?: boolean
-  className?: string
 }
 
 const HeroPostSmall = ({
@@ -46,7 +46,7 @@ const HeroPostSmall = ({
         <PostTitleLink post={post} className="text-3xl" />
 
         {showDescription && (
-          <HTML content={post.excerpt} className="text-gray-500 text-sm mt-2" />
+          <HTML html={post.excerpt} className="text-gray-500 text-sm mt-2" />
         )}
 
         {/* <p className="text-lg leading-relaxed mb-4">{post.frontmatter.excerpt}</p> */}

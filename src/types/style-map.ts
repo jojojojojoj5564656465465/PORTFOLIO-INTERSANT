@@ -1,5 +1,3 @@
-interface IStyleMap {
+export default interface IStyleMap {
   [key: string]: string
 }
-
-export default IStyleMap

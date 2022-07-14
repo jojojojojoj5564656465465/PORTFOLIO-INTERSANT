@@ -1,11 +1,8 @@
 import cn from '../lib/class-names'
 import { SITE_NAME } from '../constants'
+import IClassProps from '../types/class-props'
 
-interface IProps {
-  className?: string
-}
-
-const Logo = ({ className }: IProps) => (
+const Logo = ({ className }: IClassProps) => (
   <svg
     width="179.6mm"
     height="30mm"

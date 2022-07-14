@@ -1,5 +1,3 @@
-interface IClassProps {
+export default interface IClassProps {
   className?: string
 }
-
-export default IClassProps

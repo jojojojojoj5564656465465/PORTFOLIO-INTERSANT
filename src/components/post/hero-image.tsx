@@ -1,12 +1,12 @@
 import cn from '../../lib/class-names'
+import IClassProps from '../../types/class-props'
 import IPost from '../../types/post'
 import BasePostImage from './base-post-image'
 
-interface IProps {
+interface IProps extends IClassProps {
   post: IPost
   size?: number[]
   sizes?: number[]
-  className?: string
 }
 
 const HeroImage = ({

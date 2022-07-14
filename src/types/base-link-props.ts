@@ -1,9 +1,5 @@
-import { ReactNode } from 'react'
+import IChildrenProps from './children-props'
 
-interface IBaseLinkProps {
+export default interface IBaseLinkProps extends IChildrenProps {
   aria?: string
-  className?: string
-  children?: ReactNode
 }
-
-export default IBaseLinkProps

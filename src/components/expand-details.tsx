@@ -1,12 +1,11 @@
 import { ReactNode } from 'react'
 import AnimateHeight from 'react-animate-height'
+import IChildrenProps from '../types/children-props'
 //import AnimateHeight from 'react-animate-height'
 
-interface IProps {
+interface IProps extends IChildrenProps {
   id: string
   expanded: boolean
-  className?: string
-  children?: ReactNode
 }
 
 const ExpandDetails = ({

@@ -1,4 +1,4 @@
-interface IPage {
+export default interface IPage {
   slug: string
   fields: {
     title: string
@@ -10,5 +10,3 @@ interface IPage {
   }
   html: string
 }
-
-export default IPage

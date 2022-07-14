@@ -1,13 +1,9 @@
 import cn from '../../lib/class-names'
+import { IHtmlProps } from '../html'
 import MarkdownBody from '../markdown-body'
 
-interface IProps {
-  content: string
-  className?: string
-}
-
-const PostBody = ({ content, className }: IProps) => (
-  <MarkdownBody content={content} className={cn('post', className)} />
+const PostBody = ({ html, className }: IHtmlProps) => (
+  <MarkdownBody html={html} className={cn('post', className)} />
 )
 
 export default PostBody

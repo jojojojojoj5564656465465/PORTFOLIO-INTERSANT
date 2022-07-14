@@ -1,5 +1,3 @@
 import IClassProps from './class-props'
 
-interface IconProps extends IClassProps {}
-
-export default IconProps
+export default interface IconProps extends IClassProps {}

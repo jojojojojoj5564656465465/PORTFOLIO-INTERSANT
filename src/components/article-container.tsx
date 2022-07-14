@@ -1,17 +1,10 @@
-import { ReactNode } from 'react'
-import ArticleDiv from './article-div'
-import IStyleMap from '../types/style-map'
-import HCenterRow from './h-center-row'
 import cn from '../lib/class-names'
+import IChildrenProps from '../types/children-props'
+import ArticleDiv from './article-div'
+import HCenterRow from './h-center-row'
 
-interface IProps {
-  className?: string
-  style?: IStyleMap
-  children?: ReactNode
-}
-
-const ArticleContainer = ({ className, style, children }: IProps) => (
-  <HCenterRow className={cn('w-full', className)} style={style}>
+const ArticleContainer = ({ className, children }: IChildrenProps) => (
+  <HCenterRow className={cn('w-full', className)}>
     <ArticleDiv>{children}</ArticleDiv>
   </HCenterRow>
 )
