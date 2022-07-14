@@ -8,7 +8,7 @@ interface IProps {
 const RelatedPost = ({ post }: IProps) => (
   <PostPreview
     post={post}
-    className="hover:shadow bg-white border border-gray-100 h-full rounded-md transition-shadow duration-300"
+    className="hover:shadow bg-white border border-gray-100 h-full rounded-md animate-shadow"
     innerClassName="p-8"
     headerClassName="text-3xl"
     showImage={false}

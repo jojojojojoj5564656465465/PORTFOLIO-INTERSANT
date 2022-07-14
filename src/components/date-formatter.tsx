@@ -1,4 +1,5 @@
 import { parseISO, format } from 'date-fns'
+import cn from '../lib/class-names'
 
 interface IProps {
   date: string
@@ -8,7 +9,10 @@ interface IProps {
 const DateFormatter = ({ date, className }: IProps) => {
   const d = parseISO(date)
   return (
-    <time dateTime={date} className={className}>
+    <time
+      dateTime={date}
+      className={cn('block text-sm text-gray-400', className)}
+    >
       {format(d, 'LLL	d, yyyy')}
     </time>
   )

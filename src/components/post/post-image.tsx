@@ -25,7 +25,7 @@ const PostImage = ({
         size={size}
         sizes={sizes}
         lazy={lazy}
-        className="absolute transition-transform duration-300 hover:scale-105"
+        className="absolute transition-transform duration-300 hover:scale-104"
       />
     </div>
   )

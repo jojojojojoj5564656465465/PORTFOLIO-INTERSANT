@@ -37,7 +37,7 @@ const PostDetailsHoz = ({ post, className }: IProps) => (
     <div className="flex flex-row justify-between items-center">
       <Avatar author={post.authors[0]} showTitle={true} />
 
-      <DateFormatter date={post.date} className=" text-gray-400 text-sm" />
+      <DateFormatter date={post.date} />
     </div>
 
     {/* <PostTags post={post} /> */}

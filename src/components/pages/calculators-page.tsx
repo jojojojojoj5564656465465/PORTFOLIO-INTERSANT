@@ -10,7 +10,7 @@ const calcLink = (name: string, description: string, to: string) => {
       <BaseLink
         href={to}
         aria={`Click to open ${name} calculator`}
-        className="flex flex-col items-center w-full h-full border border-gray-200 rounded-lg w hover:shadow transition-shado duration-300"
+        className="flex flex-col items-center w-full h-full border border-gray-200 rounded-lg w hover:shadow animate-shadow"
       >
         <div className="h-full px-6 py-8">
           <HCenterRow className="w-full">

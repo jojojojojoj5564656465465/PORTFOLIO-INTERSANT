@@ -46,16 +46,15 @@ const HeroPostSmall = ({
         <PostTitleLink post={post} className="text-3xl" />
 
         {showDescription && (
-          <HTML content={post.excerpt} className="text-gray-500 mt-2" />
+          <HTML content={post.excerpt} className="text-gray-500 text-sm mt-2" />
         )}
-        <div className="mt-2 text-sm font-medium">
-          <DateFormatter date={post.date} />
-        </div>
 
         {/* <p className="text-lg leading-relaxed mb-4">{post.frontmatter.excerpt}</p> */}
         {showAvatar && (
-          <Avatar author={post.authors[0]} isSmall={true} className="mt-4" />
+          <Avatar author={post.authors[0]} isSmall={true} className="mt-3" />
         )}
+
+        <DateFormatter date={post.date} className="mt-3" />
       </div>
     </article>
   )

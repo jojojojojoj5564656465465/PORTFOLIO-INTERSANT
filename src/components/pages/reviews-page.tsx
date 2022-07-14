@@ -8,7 +8,7 @@ const reviewLink = (name: string, description: string, href: string) => {
       <BaseLink
         href={`/reviews/${href}`}
         aria={`Click to read ${name} review`}
-        className="flex flex-col items-center w-full h-full border border-gray-200 hover:shadow rounded-lg transition-shado duration-300"
+        className="flex flex-col items-center w-full h-full border border-gray-200 hover:shadow rounded-lg animate-shadow"
       >
         <div className="w-full h-full p-6">
           {/* <HCenterRow className="w-full">

@@ -35,7 +35,7 @@ const Avatar = ({
         <UnderlineLink
           href={href}
           aria={`Click to read more information about ${author.fields.name}`}
-          className={cn([isSmall, 'text-sm'], [showTitle, 'font-semibold'])}
+          className={cn('font-semibold', [isSmall, 'text-sm'])}
         >
           {author.fields.name}
         </UnderlineLink>

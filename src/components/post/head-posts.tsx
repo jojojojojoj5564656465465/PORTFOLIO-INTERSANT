@@ -1,5 +1,5 @@
 import IPreviewPost from '../../types/preview-post'
-import BaseHeadPosts from './base-head-posts'
+import PostPreview from './post-preview'
 
 interface IProps {
   posts: IPreviewPost[]
@@ -7,8 +7,15 @@ interface IProps {
 }
 
 const HeadPosts = ({ posts, showAvatar = true }: IProps) => (
-  <section>
-    <BaseHeadPosts posts={posts} showAvatar={showAvatar} />
+  <section className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    {posts.map(post => (
+      <PostPreview
+        key={post.slug}
+        post={post}
+        showAvatar={showAvatar}
+        className="border-t border-gray-200 pt-8"
+      />
+    ))}
   </section>
 )
 
