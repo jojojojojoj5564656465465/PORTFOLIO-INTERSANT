@@ -5,6 +5,7 @@ import { GENERIC_COVER_IMAGES } from '../../constants'
 import { getCanonicalPostSlug } from '../slug'
 import { getFields } from './markdown'
 import ISectionMap from '../../types/section-map'
+import IBasePost from '../../types/base-post'
 
 export const POSTS_DIR = join(process.cwd(), 'content', 'posts')
 export const DRAFTS_DIR = join(process.cwd(), 'content', 'drafts')
@@ -33,7 +34,7 @@ export const getPostBySlug = (
   fields: string[] = [],
   index: number = 0,
   isPublished: boolean = true
-) => {
+): IBasePost => {
   const canonicalSlug = getCanonicalPostSlug(path)
 
   // const fullPath = join(
@@ -46,6 +47,7 @@ export const getPostBySlug = (
   const date = match ? match.slice(1, 4).join('-') : '2022-01-01'
 
   const post = {
+    index: -1,
     slug: isPublished
       ? `/blog/${canonicalSlug}`
       : `/blog/drafts/${canonicalSlug}`,
@@ -60,7 +62,7 @@ export const getPostBySlug = (
   return post
 }
 
-export const getAllPosts = (fields: string[] = []) => {
+export const getAllPosts = (fields: string[] = []): IBasePost[] => {
   const paths = getPostPaths()
   const posts = paths
     .map((path, index) => getPostBySlug(path, fields, index, true))
@@ -84,6 +86,7 @@ export const getAllPosts = (fields: string[] = []) => {
       }
     })
     .map((post, index) => {
+      // reindex
       return {
         ...post,
         index,

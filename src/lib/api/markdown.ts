@@ -1,19 +1,26 @@
 import fs from 'fs'
 import matter from 'gray-matter'
-import IFieldMap from '../../types/field-map'
+import IPostFields from '../../types/post-fields'
 import { getTags } from '../tags'
 
-export const getFields = (path: string, fields: string[] = []): IFieldMap => {
+export const getFields = (path: string, fields: string[] = []): IPostFields => {
   const fileContents = fs.readFileSync(path, 'utf8')
   const { data, content, excerpt } = matter(fileContents, {
     excerpt: true,
     excerpt_separator: '<!-- end -->',
   })
 
-  const items: IFieldMap = {}
-
-  items['content'] = content
-  items['excerpt'] = excerpt
+  const items: IPostFields = {
+    title: '',
+    description: '',
+    content: content,
+    excerpt: excerpt,
+    hero: '',
+    author: '',
+    section: '',
+    related: '',
+    tags: [],
+  }
 
   for (const [key, value] of Object.entries(data)) {
     switch (key) {

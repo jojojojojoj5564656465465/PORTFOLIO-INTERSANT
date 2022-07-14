@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path, { join } from 'path'
+import IAuthorMap from '../../types/author-map'
 import { getCanonicalAuthorSlug } from '../slug'
 import { getFields } from './markdown'
 
@@ -38,6 +39,6 @@ export const getAllAuthors = (fields: string[] = []) => {
   return authors
 }
 
-export const getAuthorMap = (fields: string[] = []) => {
+export const getAuthorMap = (fields: string[] = []): IAuthorMap => {
   return Object.fromEntries(getAllAuthors(fields).map(x => [x.fields.name, x]))
 }

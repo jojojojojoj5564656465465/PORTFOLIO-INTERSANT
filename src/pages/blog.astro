@@ -6,6 +6,7 @@ import ArticleLayout from '../layouts/ArticleLayout.astro'
 import { getAuthorMap } from '../lib/api/author'
 import { getAllPosts } from '../lib/api/post'
 import markdownHtml from '../lib/markdown-html'
+import IPreviewPost from '../types/preview-post'
 
 
 const authorMap = getAuthorMap()
@@ -13,13 +14,15 @@ const authorMap = getAuthorMap()
 //await generateSiteMap(posts)
 //await generateRSS(posts)
 
-const posts = await Promise.all(
+const posts: IPreviewPost[] = await Promise.all(
   getAllPosts().map(async post => {
-    return {
-      ...post,
-      excerpt: await markdownHtml(post.fields.excerpt || ''),
-      authors: [authorMap[post.fields.author]],
-    }
+    const ret : IPreviewPost = {
+    ...post,
+    excerpt: await markdownHtml(post.fields.excerpt || ''),
+    authors: [authorMap[post.fields.author]],
+}
+
+    return ret
   })
 )
 
