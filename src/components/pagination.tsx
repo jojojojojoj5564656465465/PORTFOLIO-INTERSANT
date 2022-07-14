@@ -1,15 +1,11 @@
-import BlueLink from './link/blue-link'
 import { range } from 'lodash-es'
-import ToBlueLink from './link/to-blue-link'
-import HCenterCol from './h-center-col'
-
-import BaseLink from './link/base-link'
 import { ReactNode } from 'react'
-
+import cn from '../lib/class-names'
 import ChevronLeftIcon from './icons/chevron-left'
 import ChevronRightIcon from './icons/chevron-right'
-
-import cn from '../lib/class-names'
+import BaseLink from './link/base-link'
+import BlueLink from './link/blue-link'
+import ToBlueLink from './link/to-blue-link'
 
 const makeUrl = (root: string, page: number) => {
   return `${root}/page/${page}`
@@ -44,25 +40,25 @@ const makePageUrl = (p: number, page: number, pages: number, root: string) => {
 }
 
 const BTN_CLS =
-  'flex flex-row items-center justify-center border border-transparent min-w-8 py-1 rounded-md overflow-hidden'
+  'flex flex-row items-center justify-center min-w-8 h-8 rounded-md overflow-hidden border border-transparent'
 
 interface BaseButtonProps {
   href: string
-  aria: string
 }
 
 interface ButtonProps extends BaseButtonProps {
+  aria?: string
   className?: string
-  children: ReactNode
+  children?: ReactNode
 }
 
-const Button = ({ href, aria, className, children }: ButtonProps) => (
+const LinkButton = ({ href, aria, className, children }: ButtonProps) => (
   <BaseLink
     href={href}
     aria={aria}
     className={cn(
       BTN_CLS,
-      'text-blue-500 fill-blue-500 hover:border-gray-300 transition duration-300',
+      'text-blue-500 fill-blue-500  hover:border-gray-300 transition duration-300',
       className
     )}
   >
@@ -70,88 +66,112 @@ const Button = ({ href, aria, className, children }: ButtonProps) => (
   </BaseLink>
 )
 
-const PrevButton = ({ href, aria }: BaseButtonProps) => (
-  <Button href={href} aria={aria} className="px-2">
-    <ChevronLeftIcon className="mr-2 w-3" /> Prev
-  </Button>
+const NavButton = ({ href, aria, className, children }: ButtonProps) => (
+  <LinkButton href={href} aria={aria} className={cn('px-2 gap-x-2', className)}>
+    {children}
+  </LinkButton>
 )
 
-const NextButton = ({ href, aria }: BaseButtonProps) => (
-  <Button href={href} aria={aria} className="px-2">
-    Next <ChevronRightIcon className="ml-2 w-3" />
-  </Button>
+const PrevButton = ({ href }: BaseButtonProps) => (
+  <NavButton href={href} aria="Previous page">
+    <ChevronLeftIcon className="w-2" /> Prev
+  </NavButton>
 )
 
-interface PageButtonProps extends BaseButtonProps {
-  children: ReactNode
-}
+const NextButton = ({ href }: BaseButtonProps) => (
+  <NavButton href={href} aria="Next page">
+    Next <ChevronRightIcon className="w-2" />
+  </NavButton>
+)
 
-interface IProps {
+interface ISelectedPageButtonProps {
   page: number
-  pages: number
   root?: string
 }
 
-interface IPageButtonProps extends IProps {
+interface IPageButtonProps extends ISelectedPageButtonProps {
   currentPage: number
 }
 
-const PageButton = ({ page, currentPage, pages, root }: IPageButtonProps) => (
+interface IBasePageButtonProps extends ISelectedPageButtonProps {
+  className?: string
+  children?: ReactNode
+}
+
+interface IProps extends ISelectedPageButtonProps {
+  pages: number
+}
+
+const BasePageButton = ({
+  page,
+  root = '/',
+  className,
+}: IBasePageButtonProps) => (
   <BaseLink
     href={makeUrl(root, page)}
     aria={`Goto page ${page}`}
-    className={cn(BTN_CLS, [
-      page === currentPage,
-      'border-blue-600 bg-blue-600 text-white',
-      'border-transparent  hover:border-gray-300 transition duration-300',
-    ])}
+    className={cn(BTN_CLS, className)}
   >
     {page}
   </BaseLink>
 )
 
+const SelectedPageButton = ({ page, root = '/' }: ISelectedPageButtonProps) => (
+  <BasePageButton page={page} root={root} className="bg-blue-500 text-white">
+    {page}
+  </BasePageButton>
+)
+
+const PageButton = ({ page, currentPage, root = '/' }: IPageButtonProps) =>
+  page === currentPage ? (
+    <SelectedPageButton page={page} root={root} />
+  ) : (
+    <BasePageButton
+      page={page}
+      root={root}
+      className="hover:border-gray-300 transition duration-300"
+    >
+      {page}
+    </BasePageButton>
+  )
+
+const Ellipsis = () => <li className={BTN_CLS}>...</li>
+
 const Pagination = ({ page, pages, root = '/blog' }: IProps) => {
-  const pageStart = Math.max(2, page - 1)
+  const pageStart = Math.max(page - 1, 2)
   const pageEnd = Math.min(page + 1, pages - 1)
 
   const prevPage = Math.max(1, page - 1)
   const nextPage = Math.min(pages, page + 1)
 
   return (
-    <HCenterCol>
-      <ul className="flex flex-row items-center">
-        <li>
-          <PrevButton href={makeUrl(root, prevPage)} aria="Previous page" />
+    <ul className="flex flex-row items-center gap-x-1 mx-auto">
+      <li>
+        <PrevButton href={makeUrl(root, prevPage)} />
+      </li>
+
+      <li>
+        <PageButton page={1} currentPage={page} root={root} />
+      </li>
+
+      {pageStart > 2 && <Ellipsis />}
+
+      {range(pageStart, pageEnd + 1).map((p: number, index: number) => (
+        <li key={p}>
+          <PageButton page={p} currentPage={page} root={root} />
         </li>
+      ))}
 
-        <li className="ml-1">
-          <PageButton currentPage={page} page={1} pages={pages} root={root} />
-        </li>
+      {pageEnd < pages - 1 && <Ellipsis />}
 
-        {pageStart > 2 && <li className={'ml-2 mr-1'}>...</li>}
+      <li>
+        <PageButton page={pages} currentPage={page} root={root} />
+      </li>
 
-        {range(pageStart, pageEnd + 1).map((p: number, index: number) => (
-          <li className="ml-1" key={p}>
-            <PageButton currentPage={page} page={p} pages={pages} root={root} />
-          </li>
-        ))}
-
-        {pageEnd < pages - 1 && <li className={'ml-2 mr-1'}>...</li>}
-
-        <li className={'ml-1'}>
-          <PageButton
-            currentPage={page}
-            page={pages}
-            pages={pages}
-            root={root}
-          />
-        </li>
-
-        <li className="ml-1">
-          <NextButton href={makeUrl(root, nextPage)} aria="Next page" />
-        </li>
-      </ul>
-    </HCenterCol>
+      <li>
+        <NextButton href={makeUrl(root, nextPage)} />
+      </li>
+    </ul>
   )
 }
 

@@ -1,22 +1,19 @@
-import { ReactNode } from 'react'
 import cn from '../lib/class-names'
+import IChildrenProps from '../types/children-props'
 import IStyleMap from '../types/style-map'
 
-interface IProps {
+interface IProps extends IChildrenProps {
   center?: boolean
-  className?: string
   style?: IStyleMap
   onClick?: any
   onMouseEnter?: any
   onMouseLeave?: any
   tabIndex?: number
-  children?: ReactNode
 }
 
 const BaseCol = ({
   center = false,
   className = '',
-  style,
   onClick,
   onMouseEnter,
   onMouseLeave,
@@ -25,7 +22,6 @@ const BaseCol = ({
 }: IProps) => (
   <div
     className={cn('flex flex-col', [center, 'justify-center'], className)}
-    style={style}
     onClick={onClick}
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}

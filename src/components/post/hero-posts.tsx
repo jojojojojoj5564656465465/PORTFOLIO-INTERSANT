@@ -6,7 +6,7 @@ interface IProps {
 }
 
 const HeroPosts = ({ posts }: IProps) => (
-  <section className="mt-8">
+  <section>
     <BaseHeroPosts posts={posts} />
   </section>
 )

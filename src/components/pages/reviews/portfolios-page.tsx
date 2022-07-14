@@ -1,4 +1,4 @@
-import portfolios from '../../../../_content/reviews/portfolios.json'
+import portfolios from '../../../../content/reviews/portfolios.json'
 import BlueIndexLink from '../../link/blue-index-link'
 import ReviewExpandDiv from '../../reviews/review-expand-div'
 
@@ -111,7 +111,7 @@ const Portfolio = ({ portfolio, index }: IProps) => {
 
 const PortfoliosPage = () => {
   return (
-    <ul>
+    <ul className="flex flex-col flex-nowrap gap-y-8">
       {portfolios.map((portfolio: any, index: number) => {
         return (
           <li key={index}>

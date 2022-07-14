@@ -1,6 +1,4 @@
-import cn from '../../lib/class-names'
-import { CLS_TEXT_GRAY_HOVER } from '../../constants'
-import HEADER_LINKS from '../../../_content/menus/header.json'
+import HEADER_LINKS from '../../../content/menus/header.json'
 import ILink from '../../types/link'
 import BaseLink from '../link/base-link'
 
@@ -20,11 +18,7 @@ const MenuLinks = ({ title, tab = '', onClick }: IProps) => (
           <BaseLink
             href={link.url}
             aria={`Visit ${link.name}`}
-            className={cn(`block rounded px-6 py-4 `, [
-              selected,
-              ' bg-gray-200',
-              cn(CLS_TEXT_GRAY_HOVER, 'hover:bg-gray-100 animate-button'),
-            ])}
+            className="block rounded px-8 py-4 hover:bg-gray-100"
             onClick={onClick}
           >
             {link.name}

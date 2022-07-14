@@ -18,7 +18,7 @@ export const DEFAULT_SECTION = 'News & Annoucements'
 export const GENERIC_COVER_IMAGES = ['generic', 'generic2', 'generic3']
 
 export const POST_SLUG = '/blog'
-export const AUTHOR_SLUG = POST_SLUG + '/author'
+export const AUTHOR_SLUG = '/people'
 export const SECTION_SLUG = POST_SLUG + '/section'
 export const TAG_SLUG = POST_SLUG + '/tag'
 export const PAGE_1_SLUG = '/page/1'

@@ -1,4 +1,3 @@
-import cn from '../lib/class-names'
 import { IMAGEKIT_URL } from '../constants'
 
 // const imageKitLoader = (src: string, width: number, quality: number) => {
@@ -24,8 +23,9 @@ import { IMAGEKIT_URL } from '../constants'
 interface IProps {
   src: string
   alt: string
-  size?: [number, number]
+  size?: number[]
   sizes?: number[]
+  lazy?: boolean
   root?: string
   className?: string
 }
@@ -35,6 +35,7 @@ const BaseImage = ({
   alt,
   size = [640, 360],
   sizes = [320, 480, 640, 1280],
+  lazy = true,
   root = '/posts',
   className,
 }: IProps) => {
@@ -57,7 +58,7 @@ const BaseImage = ({
     src = `${src}.webp`
   }
 
-  const srcset = sizes.map(size => `${src}?tr=w-${size} ${size}w`).join(', ')
+  const srcset = sizes.map(s => `${src}?tr=w-${s} ${s}w`).join(', ')
 
   return (
     // eslint-disable-next-line @next/next/no-img-element
@@ -68,8 +69,7 @@ const BaseImage = ({
       width={size[0]}
       height={size[1]}
       className={className}
-      decoding="async"
-      loading="lazy"
+      loading={lazy ? 'lazy' : 'eager'}
       alt={alt}
     />
     // <Image

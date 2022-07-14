@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const HeadPosts = ({ posts, showAvatar = true }: IProps) => (
-  <section className="mb-16">
+  <section>
     <BaseHeadPosts posts={posts} showAvatar={showAvatar} />
   </section>
 )

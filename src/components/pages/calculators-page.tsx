@@ -6,15 +6,15 @@ import CalculatorIcon from '../icons/calculator'
 
 const calcLink = (name: string, description: string, to: string) => {
   return (
-    <li className="mb-8">
+    <li>
       <BaseLink
         href={to}
         aria={`Click to open ${name} calculator`}
-        className="flex flex-col items-center w-full h-full border border-gray-200 rounded-lg hover:shadow-md transition-shadow duration-300"
+        className="flex flex-col items-center w-full h-full border border-gray-200 rounded-lg w hover:shadow transition-shado duration-300"
       >
         <div className="h-full px-6 py-8">
           <HCenterRow className="w-full">
-            <CalculatorIcon className="w-24 fill-blue-300" />
+            <CalculatorIcon className="w-16 fill-blue-300" />
           </HCenterRow>
           <div className="mt-8">
             <h4 className="font-semibold">{name}</h4>
@@ -29,9 +29,9 @@ const calcLink = (name: string, description: string, to: string) => {
           </BaseLink> */}
           </div>
         </div>
-        <VCenterRow className="justify-center pb-8 text-sm uppercase font-semibold text-emerald-400 fill-emerald-400 w-full">
-          Run <ArrowRightIcon className="w-5 ml-2" />
-        </VCenterRow>
+        {/* <VCenterRow className="justify-center mb-8 text-sm uppercase font-semibold text-emerald-400 fill-emerald-400 gap-2">
+          Run <ArrowRightIcon className="w-4" />
+        </VCenterRow> */}
       </BaseLink>
     </li>
   )
@@ -39,7 +39,7 @@ const calcLink = (name: string, description: string, to: string) => {
 
 const CalculatorsPage = () => {
   return (
-    <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
+    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
       {calcLink(
         'Fees',
         'Understand how even small changes in fees can have a big impact on your return.',
@@ -53,7 +53,7 @@ const CalculatorsPage = () => {
       {calcLink(
         'Save A Million',
         'See how long it will take you to save a million dollars.',
-        '/calculators/save-million'
+        '/calculators/save-a-million'
       )}
     </ul>
   )

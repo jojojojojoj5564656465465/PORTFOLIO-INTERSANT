@@ -5,8 +5,8 @@ import MenuOverlay from './menu-overlay'
 import MenuOpenButton from './menu-button-open'
 //import Search from '../search/search'
 import Logo from '../logo'
-import useWindowResize from '../../hooks/use-window-resize'
 import LogoDark from '../logo-dark'
+import HCenterRow from '../h-center-row'
 
 interface IProps {
   title: string
@@ -15,17 +15,12 @@ interface IProps {
   className?: string
 }
 
-const SmallHeader = ({
-  title,
-  tab,
-  headerMode = 'light',
-  className,
-}: IProps) => {
+const SmallHeader = ({ title, tab, headerMode = 'light' }: IProps) => {
   const [expanded, setExpanded] = useState(false)
 
-  useWindowResize((e: any) => {
-    setExpanded(false)
-  })
+  // useWindowResize(() => {
+  //   setExpanded(false)
+  // })
 
   const _handleClick = () => {
     _toggleHeight()
@@ -37,17 +32,22 @@ const SmallHeader = ({
 
   return (
     <>
-      <VCenterRow className="flex w-full justify-between p-2 pl-6">
-        <BaseLink href="/" aria="Goto Homepage">
-          {headerMode === 'dark' ? (
-            <LogoDark className="w-48" />
-          ) : (
-            <Logo className="w-48" />
-          )}
-        </BaseLink>
+      <nav className="p-2 grid grid-cols-5">
+        <div>
+          <MenuOpenButton headerMode={headerMode} onClick={_handleClick} />
+        </div>
 
-        <MenuOpenButton headerMode={headerMode} onClick={_handleClick} />
-      </VCenterRow>
+        <HCenterRow className="col-span-3 items-center">
+          <BaseLink href="/" aria="Goto Homepage">
+            {headerMode === 'dark' ? (
+              <LogoDark className="w-48" />
+            ) : (
+              <Logo className="w-48" />
+            )}
+          </BaseLink>
+        </HCenterRow>
+        <div></div>
+      </nav>
 
       <MenuOverlay
         title={title}

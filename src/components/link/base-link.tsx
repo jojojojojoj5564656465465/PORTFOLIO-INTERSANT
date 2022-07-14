@@ -48,7 +48,7 @@ const BaseLink = ({
       </ExtLink>
     )
   } else {
-    if (children === undefined || children === null) {
+    if (!children) {
       children = <>{href}</>
     }
 

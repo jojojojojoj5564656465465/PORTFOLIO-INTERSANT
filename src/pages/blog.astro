@@ -10,18 +10,14 @@ import markdownHtml from '../lib/markdown-html'
 
 const authorMap = getAuthorMap()
 
-// Get all the posts and add the authors in
-let posts = getAllPosts()
-
 //await generateSiteMap(posts)
 //await generateRSS(posts)
 
-posts = await Promise.all(
-  posts.map(async post => {
-    const excerpt = await markdownHtml(post.fields.excerpt || '')
+const posts = await Promise.all(
+  getAllPosts().map(async post => {
     return {
       ...post,
-      excerpt,
+      excerpt: await markdownHtml(post.fields.excerpt || ''),
       authors: [authorMap[post.fields.author]],
     }
   })

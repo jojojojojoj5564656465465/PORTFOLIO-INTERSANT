@@ -1,12 +1,7 @@
-import { ReactNode } from 'react'
 import cn from '../lib/class-names'
+import IChildrenProps from '../types/children-props'
 
-interface IProps {
-  className?: string
-  children?: ReactNode
-}
-
-const H2 = ({ className, children }: IProps) => (
+const H2 = ({ className, children }: IChildrenProps) => (
   <h2 className={cn('uppercase font-light text-xl tracking-wider', className)}>
     {children}
   </h2>

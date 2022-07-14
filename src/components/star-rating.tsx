@@ -1,7 +1,5 @@
-import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
-import { faStar as faEmptyStar } from '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import VCenterRow from './v-center-row'
+import StarIcon from './icons/star'
+import HalfStarIcon from './icons/half-star'
 
 interface IProps {
   rating: number
@@ -14,40 +12,34 @@ const StarRating = ({ rating }: IProps) => {
 
   for (let i = 0; i < n; ++i) {
     stars.push(
-      <FontAwesomeIcon
-        icon={faStar}
-        className="w-4 text-emerald-400 mr-1"
-        key={stars.length}
-      />
+      <li key={i}>
+        <StarIcon className="w-5" key={stars.length} />
+      </li>
     )
   }
 
   if (rating > n) {
     stars.push(
-      <FontAwesomeIcon
-        icon={faStarHalfAlt}
-        className="w-4 text-emerald-400"
-        key={stars.length}
-      />
+      <li key={n}>
+        <HalfStarIcon className="w-5" key={stars.length} />
+      </li>
     )
   }
 
   // Pad so each is 5 stars in length
-  while (stars.length < 5) {
-    stars.push(
-      <FontAwesomeIcon
-        icon={faEmptyStar}
-        className="w-4 text-emerald-400 mr-1"
-        key={stars.length}
-      />
-    )
-  }
+  // while (stars.length < 5) {
+  //   stars.push(
+  //     <FontAwesomeIcon
+  //       icon={faEmptyStar}
+  //       size="lg"
+  //       className="text-emerald-400"
+  //       key={stars.length}
+  //     />
+  //   )
+  //}
 
   return (
-    <VCenterRow>
-      {/* <div className="font-semibold text-lg mr-2">{rating.toPrecision(2)}</div> */}
-      {stars}
-    </VCenterRow>
+    <ul className="flex flex-row flex-nowrap gap-1 fill-amber-300">{stars}</ul>
   )
 }
 

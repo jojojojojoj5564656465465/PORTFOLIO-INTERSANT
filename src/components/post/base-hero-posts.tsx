@@ -13,18 +13,15 @@ const BaseHeroPosts = ({ posts }: IProps) => {
   const topPosts = posts.slice(1, 4)
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
       <PostPreview post={topPost} className="col-span-1" />
 
-      <BaseCol className="col-span-1">
+      <BaseCol className="col-span-1 gap-y-8">
         {topPosts.map((post, index) => {
           return (
             <HeroPostSmall
               post={post}
-              className={cn([
-                index < topPosts.length - 1,
-                'border-b-2 border-gray-100 mb-8 pb-8',
-              ])}
+              className={cn([index > 0, 'border-t border-gray-200 pt-8'])}
               key={index}
             />
           )

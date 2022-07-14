@@ -1,4 +1,4 @@
-import websites from '../../_content/reviews/websites.json'
+import websites from '../../content/reviews/websites.json'
 import H2 from './h2'
 import BlueLink from './link/blue-link'
 

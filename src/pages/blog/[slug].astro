@@ -109,7 +109,7 @@ const { slug } = Astro.params
 const { post, relatedPosts, readMorePosts } = Astro.props
 ---
 
-<BaseLayout title={post.fields.title} tab="Blog">
+<BaseLayout title={post.fields.title} tab="Blog" headerMode="dark">
   <>
     <article>
       <PostHeader post={post} />

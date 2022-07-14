@@ -1,9 +1,8 @@
-import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import cn from '../../lib/class-names'
+import HamburgerIcon from '../icons/hamburger'
 
-export const CLS = `px-4 py-3 w-16 focus:outline-none animate-button border-3 border-solid border-transparent`
+export const CLS = `p-2 focus:outline-none animate-button border-3 border-solid border-transparent`
 
 export interface IProps {
   headerMode?: string
@@ -33,7 +32,9 @@ const MenuOpenButton = ({ headerMode = 'light', onClick }: IProps) => {
       ])}
       aria-label="Open Menu"
     >
-      <FontAwesomeIcon icon={faBars} size="lg" />
+      <HamburgerIcon
+        className={cn('w-4', [headerMode === 'dark', 'fill-white'])}
+      />
     </button>
   )
 }

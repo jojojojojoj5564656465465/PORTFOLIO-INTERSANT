@@ -1,5 +1,4 @@
-import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CircleInfoIcon from './icons/circle-info'
 
 interface IProps {
   text: string
@@ -7,7 +6,7 @@ interface IProps {
 
 const ToolTip = ({ text }: IProps) => (
   <div className="ml-2 tooltip cursor-pointer">
-    <FontAwesomeIcon icon={faQuestionCircle} className="w-3" />
+    <CircleInfoIcon className="w-4" />
     <div className="tooltiptext">{text}</div>
   </div>
 )

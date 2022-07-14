@@ -6,8 +6,8 @@ import { getCanonicalPostSlug } from '../slug'
 import { getFields } from './markdown'
 import ISectionMap from '../../types/section-map'
 
-export const POSTS_DIR = join(process.cwd(), '_content', 'posts', 'published')
-export const DRAFTS_DIR = join(process.cwd(), '_content', 'posts', 'drafts')
+export const POSTS_DIR = join(process.cwd(), 'content', 'posts')
+export const DRAFTS_DIR = join(process.cwd(), 'content', 'drafts')
 
 export const getAllFiles = (dirPath = '', arrayOfFiles: string[] = []) => {
   const files = fs.readdirSync(dirPath)
@@ -64,6 +64,12 @@ export const getAllPosts = (fields: string[] = []) => {
   const paths = getPostPaths()
   const posts = paths
     .map((path, index) => getPostBySlug(path, fields, index, true))
+    .filter(post => {
+      return (
+        process.env.NODE_ENV === 'development' ||
+        post.fields.status === 'published'
+      )
+    })
     // sort posts by date in descending order
     .sort((post1, post2) => {
       const d1 = new Date(post1.date)

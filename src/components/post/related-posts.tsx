@@ -8,9 +8,9 @@ interface IProps {
 
 const RelatedPosts = ({ posts, title = 'Related Posts' }: IProps) => (
   <section>
-    <h2 className="text-4xl font-bold">{title}</h2>
-    <ul className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full mt-16">
-      {posts.slice(0, 3).map((post, index) => (
+    <h2 className="text-xl lg:text-2xl font-bold">{title}</h2>
+    <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-8">
+      {posts.slice(0, 2).map((post, index) => (
         <li key={index}>
           <RelatedPost post={post} />
         </li>

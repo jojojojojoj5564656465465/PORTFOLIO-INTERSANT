@@ -1,19 +1,15 @@
-import IStyleMap from '../types/style-map'
+import IChildrenProps from '../types/children-props'
 import BaseRow from './base-row'
 
-interface IProps {
-  className?: string
-  style?: IStyleMap
+interface IProps extends IChildrenProps {
   tabIndex?: number
   onClick?: any
   onMouseEnter?: any
   onMouseLeave?: any
-  children?: React.ReactNode
 }
 
 const HCenterRow = ({
   className,
-  style,
   tabIndex,
   onClick,
   onMouseEnter,
@@ -24,7 +20,6 @@ const HCenterRow = ({
     <BaseRow
       center={true}
       className={className}
-      style={style}
       tabIndex={tabIndex}
       onClick={onClick}
       onMouseEnter={onMouseEnter}

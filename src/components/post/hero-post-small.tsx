@@ -1,8 +1,8 @@
+import { useState } from 'react'
 import Avatar from '../avatar'
 import DateFormatter from '../date-formatter'
 import PostSectionLink from './post-section-link'
 import PostImage from './post-image'
-import { useState } from 'react'
 import cn from '../../lib/class-names'
 import HTML from '../html'
 import IPreviewPost from '../../types/preview-post'
@@ -38,7 +38,7 @@ const HeroPostSmall = ({
       onMouseLeave={_handleMouseLeave}
     >
       <div className="col-span-1">
-        <PostImage post={post} hover={hover} className="h-48 lg:h-24" />
+        <PostImage post={post} className="h-48 lg:h-32 mb-4" />
       </div>
 
       <div className="col-span-2">

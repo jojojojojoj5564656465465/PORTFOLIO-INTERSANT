@@ -1,6 +1,5 @@
 import { useRef, useEffect, useState } from 'react'
 import cn from '../lib/class-names'
-import VCenterRow from './v-center-row'
 
 interface IProps {
   value?: any
@@ -46,28 +45,22 @@ const TextBox = ({
 
   return (
     <div
-      className={cn('rounded-lg overflow-hidden animate-button', [
-        _focus,
-        'bg-blue-200',
-      ])}
-      style={{ padding: '4px' }}
+      className="flex flex-row items-center bg-white rounded-md border border-gray-300 hover:border-gray-400 animate-button p-2"
       onFocus={_handleFocus}
       onBlur={_handleBlur}
     >
-      <VCenterRow className="w-full bg-white rounded-md border border-gray-300 hover:border-gray-400 animate-button p-2">
-        {prefix !== '' && prefixLeft && <div className="mr-1">{prefix}</div>}
-        <div className={`w-full`}>
-          <input
-            type="text"
-            onKeyDown={_handleInput}
-            onFocus={_handleFocus}
-            onBlur={_handleBlur}
-            className={cn('w-full outline-none', [!alignLeft, 'text-right'])}
-            ref={textRef}
-          />
-        </div>
-        {prefix !== '' && !prefixLeft && <div className="ml-1">{prefix}</div>}
-      </VCenterRow>
+      {prefix !== '' && prefixLeft && <div className="mr-1">{prefix}</div>}
+      <div className={`w-full`}>
+        <input
+          type="text"
+          onKeyDown={_handleInput}
+          onFocus={_handleFocus}
+          onBlur={_handleBlur}
+          className={cn('w-full outline-none', [!alignLeft, 'text-right'])}
+          ref={textRef}
+        />
+      </div>
+      {prefix !== '' && !prefixLeft && <div className="ml-1">{prefix}</div>}
     </div>
   )
 }

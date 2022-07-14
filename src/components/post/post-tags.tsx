@@ -1,28 +1,32 @@
 import cn from '../../lib/class-names'
-import IPost from '../../types/post'
-import WrapRow from '../wrap-row'
-import PostTagLink from './post-tag-link'
+import IPreviewPost from '../../types/preview-post'
+import VCenterRow from '../v-center-row'
+import PostTagLinkBlue from './post-tag-link-blue'
 
 interface IProps {
-  post: IPost
+  post: IPreviewPost
   className?: string
 }
 
 const PostTags = ({ post, className }: IProps) => (
-  <section
-    className={cn(
-      'flex flex-row items-center text-xs tracking-wide uppercase',
-      className
-    )}
+  <VCenterRow
+    className={cn('text-sm  gap-4 border-t border-gray-200 pt-4', className)}
   >
-    <div className="mr-4">Tags:</div>
-    {post.fields.tags
-      .sort()
-      .map(tag => tag.trim().toUpperCase())
-      .map((tag: string, index: number) => {
-        return <PostTagLink tag={tag} key={index} />
-      })}
-  </section>
+    <span>Tags:</span>
+    <ul className="flex flex-row flex-wrap gap-2">
+      {post.fields.tags
+        .sort()
+        .map(tag => tag.trim())
+        .map((tag: string, index: number) => {
+          return (
+            <li key={index}>
+              <PostTagLinkBlue tag={tag} />
+              {index < post.fields.tags.length - 1 && <span>,</span>}
+            </li>
+          )
+        })}
+    </ul>
+  </VCenterRow>
 )
 
 export default PostTags

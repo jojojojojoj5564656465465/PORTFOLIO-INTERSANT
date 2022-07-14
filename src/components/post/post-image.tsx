@@ -5,32 +5,27 @@ import BasePostImage from './base-post-image'
 
 interface IProps {
   post: IBasePost
-  size?: [number, number]
+  size?: number[]
   sizes?: number[]
-  hover?: boolean
+  lazy?: boolean
   className?: string
 }
 
 const PostImage = ({
   post,
   size = [640, 360],
-  sizes = [320, 480, 640, 1280],
-  hover = false,
+  sizes = [320, 480, 640, 800, 960, 1280],
+  lazy = true,
   className,
 }: IProps) => {
   const image = (
-    <div
-      className={cn('relative overflow-hidden rounded-lg w-full', className)}
-    >
+    <div className={cn('relative overflow-hidden rounded-lg', className)}>
       <BasePostImage
         post={post}
         size={size}
         sizes={sizes}
-        className={cn('absolute', [
-          hover,
-          'brightness-80',
-          'hover:scale-102 transition-transform duration-300',
-        ])}
+        lazy={lazy}
+        className="absolute transition-transform duration-300 hover:scale-105"
       />
     </div>
   )

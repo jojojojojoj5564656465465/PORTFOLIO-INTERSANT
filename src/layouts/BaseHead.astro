@@ -1,5 +1,5 @@
 ---
-import '../styles/main.css';
+import "../styles/main.css"
 
 import { SITE_NAME, SITE_URL, GTAG } from "../constants"
 
@@ -10,10 +10,9 @@ export interface Props {
   isIndexed?: boolean
 }
 
-const { title, description, slug, isIndexed=true } = Astro.props
+const { title, description, slug, isIndexed = true } = Astro.props
 
 const desc = description ? description : title
-
 
 const permalink = slug ? `${SITE_URL}${slug}` : Astro.canonicalURL.href
 ---
@@ -64,15 +63,15 @@ const permalink = slug ? `${SITE_URL}${slug}` : Astro.canonicalURL.href
 <script async src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
-  gtag('config', GTAG);
+  gtag('config', 'G-W3NDDXMDMP');
 </script>
 
 {!isIndexed && (
-  <>
-    <meta name="robots" content="noindex,nofollow" />
-    <meta name="googlebot" content="noindex,nofollow" />
-  </>
+<>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="googlebot" content="noindex,nofollow" />
+</>
 )}

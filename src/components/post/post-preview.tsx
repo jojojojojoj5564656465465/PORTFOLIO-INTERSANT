@@ -10,24 +10,26 @@ import PostTitleLink from './post-title-link'
 
 interface IProps {
   post: IPreviewPost
-  imageClassName?: string
   className?: string
+  imageClassName?: string
   headerClassName?: string
   innerClassName?: string
   showDescription?: boolean
   showImage?: boolean
   showAvatar?: boolean
+  lazy?: boolean
 }
 
 const PostPreview = ({
   post,
-  imageClassName,
   className,
+  imageClassName = 'h-64 lg:h-72',
   headerClassName = 'text-4xl lg:text-5xl',
   innerClassName,
   showDescription = true,
   showImage = true,
   showAvatar = true,
+  lazy = false,
 }: IProps) => {
   const [hover, setHover] = useState(false)
 
@@ -48,7 +50,8 @@ const PostPreview = ({
       {showImage && (
         <PostImage
           post={post}
-          className={cn('h-64 lg:h-72 mb-4', imageClassName)}
+          lazy={lazy}
+          className={cn('mb-4', imageClassName)}
         />
       )}
 

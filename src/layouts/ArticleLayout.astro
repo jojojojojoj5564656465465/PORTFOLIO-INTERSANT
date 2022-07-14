@@ -5,18 +5,17 @@ import cn from "../lib/class-names"
 
 export interface Props {
 	title: string
-	description?: string
 	tab?: string
 	isIndexed?: boolean
 	slug?: string
 	className?: string
 }
 
-let { title, description, tab, slug, isIndexed, className } = Astro.props
+let { title, tab, slug, isIndexed, className } = Astro.props
 ---
 
-<BaseLayout title={title} description={description} tab={tab} slug={slug} isIndexed={isIndexed}>
-	<ArticleContainer className={cn('py-12', className)}>
+<BaseLayout title={title} tab={tab} slug={slug} isIndexed={isIndexed} className={cn("mt-8 lg:mt-12", className)}>
+	<ArticleContainer className={cn('mb-16', className)}>
 		<slot />
 	</ArticleContainer>
 </BaseLayout>

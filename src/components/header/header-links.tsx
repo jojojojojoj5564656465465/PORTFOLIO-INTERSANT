@@ -1,5 +1,4 @@
-import cn from '../../lib/class-names'
-import HEADER_LINKS from '../../../_content/menus/header.json'
+import HEADER_LINKS from '../../../content/menus/header.json'
 import ILink from '../../types/link'
 import HeaderLink from './header-link'
 import HeaderLinkDark from './header-link-dark'
@@ -16,25 +15,37 @@ const HeaderLinks = ({
   tab = '',
   headerMode = 'light',
   onClick,
-}: IProps) => (
-  <ul
-    className="flex flex-row items-center justify-center col-span-4"
-    style={{ fontFamily: 'Poppins' }}
-  >
-    {HEADER_LINKS.map((link: ILink, index: number) => {
-      const selected = link.name === title || link.name === tab
+}: IProps) => {
+  if (!tab) {
+    tab = title
+  }
 
-      return (
-        <li key={index} className={cn('inline', [index > 0, 'ml-6'])}>
-          {headerMode === 'dark' ? (
-            <HeaderLinkDark link={link} selected={selected} onClick={onClick} />
-          ) : (
-            <HeaderLink link={link} selected={selected} onClick={onClick} />
-          )}
-        </li>
-      )
-    })}
-  </ul>
-)
+  tab = tab.toLowerCase()
+
+  return (
+    <ul
+      className="flex flex-row flex-nowrap items-center justify-center col-span-4 gap-8"
+      style={{ fontFamily: 'Poppins' }}
+    >
+      {HEADER_LINKS.map((link: ILink, index: number) => {
+        const selected = link.name.toLowerCase() === tab
+
+        return (
+          <li key={index} className="inline">
+            {headerMode === 'dark' ? (
+              <HeaderLinkDark
+                link={link}
+                selected={selected}
+                onClick={onClick}
+              />
+            ) : (
+              <HeaderLink link={link} selected={selected} onClick={onClick} />
+            )}
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
 
 export default HeaderLinks

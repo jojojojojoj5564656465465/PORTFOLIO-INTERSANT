@@ -3,7 +3,7 @@ import path, { join } from 'path'
 import { getCanonicalAuthorSlug } from '../slug'
 import { getFields } from './markdown'
 
-const authorsDir = join(process.cwd(), '_content', 'authors')
+const authorsDir = join(process.cwd(), 'content', 'authors')
 
 const getAllFiles = (dirPath = '', arrayOfFiles: string[] = []) => {
   const files = fs.readdirSync(dirPath)

@@ -1,22 +1,18 @@
 import cn from '../lib/class-names'
-import IStyleMap from '../types/style-map'
+import IChildrenProps from '../types/children-props'
 import BaseCol from './base-col'
 
-interface IProps {
+interface IProps extends IChildrenProps {
   center?: boolean
-  className?: string
-  style?: IStyleMap
   tabIndex?: number
   onClick?: any
   onMouseEnter?: any
   onMouseLeave?: any
-  children?: React.ReactNode
 }
 
 const HCenterCol = ({
   center = false,
   className = '',
-  style,
   tabIndex,
   onClick,
   onMouseEnter,
@@ -27,7 +23,6 @@ const HCenterCol = ({
     <BaseCol
       center={center}
       className={cn('items-center', className)}
-      style={style}
       tabIndex={tabIndex}
       onClick={onClick}
       onMouseEnter={onMouseEnter}

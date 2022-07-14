@@ -1,18 +1,16 @@
-import { ReactNode } from 'react'
 import cn from '../lib/class-names'
+import IChildrenProps from '../types/children-props'
 import IStyleMap from '../types/style-map'
 import BaseRow from './base-row'
 
-interface IProps {
+interface IProps extends IChildrenProps {
   center?: boolean
-  className?: string
   style?: IStyleMap
   tabIndex?: number
   onClick?: any
   onKeyDown?: any
   onMouseEnter?: any
   onMouseLeave?: any
-  children?: ReactNode
 }
 
 const VCenterRow = ({

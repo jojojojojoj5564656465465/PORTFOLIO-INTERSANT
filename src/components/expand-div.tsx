@@ -1,12 +1,12 @@
 import { ReactElement } from 'react'
+import IClassProps from '../types/class-props'
 import Expand from './expand'
 import UnderlineLink from './link/underline-link'
 
-interface IProps {
+interface IProps extends IClassProps {
   title: string
   href?: string
   isExpanded?: boolean
-  className?: string
   children: ReactElement
 }
 

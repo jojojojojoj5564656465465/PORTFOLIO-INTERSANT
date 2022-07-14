@@ -1,16 +1,15 @@
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CloseIcon from '../icons/close'
 import { CLS, IProps } from './menu-button-open'
 
 const MenuCloseButton = ({ onClick }: IProps) => {
   const [hover, setHover] = useState(false)
 
-  const _handleMouseEnter = (e: any) => {
+  const _handleMouseEnter = () => {
     setHover(true)
   }
 
-  const _handleMouseLeave = (e: any) => {
+  const _handleMouseLeave = () => {
     setHover(false)
   }
 
@@ -22,7 +21,7 @@ const MenuCloseButton = ({ onClick }: IProps) => {
       className={CLS}
       aria-label="Close Menu"
     >
-      <FontAwesomeIcon icon={faTimes} size="lg" />
+      <CloseIcon className="w-5 fill-white" />
     </button>
   )
 }

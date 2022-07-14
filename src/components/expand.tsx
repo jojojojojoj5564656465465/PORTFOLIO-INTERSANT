@@ -1,10 +1,10 @@
 import { ReactElement, useState } from 'react'
+import IClassProps from '../types/class-props'
 import ExpandButton from './expand-button'
 import ExpandDetails from './expand-details'
 
-interface IProps {
+interface IProps extends IClassProps {
   isExpanded?: boolean
-  className?: string
   children: ReactElement[]
 }
 

@@ -1,9 +1,10 @@
+import cn from '../../lib/class-names'
 import IPost from '../../types/post'
 import BasePostImage from './base-post-image'
 
 interface IProps {
   post: IPost
-  size?: [number, number]
+  size?: number[]
   sizes?: number[]
   className?: string
 }
@@ -14,7 +15,12 @@ const HeroImage = ({
   sizes = [480, 640, 1280, 1600],
   className,
 }: IProps) => (
-  <BasePostImage post={post} size={size} sizes={sizes} className={className} />
+  <BasePostImage
+    post={post}
+    size={size}
+    sizes={sizes}
+    className={cn('rounded-lg', className)}
+  />
 )
 
 export default HeroImage
