@@ -11,7 +11,7 @@ layout: ../layouts/MarkdownLayout.astro
 ### Who created this site?
 
 The site was designed, coded and written by
-[Antony Holmes](/people/antony-holmes). You can learn more about him [here](/people/antony-holmes).
+[Antony Holmes](/author/antony-holmes). You can learn more about him [here](/author/antony-holmes).
 
 ### How can I support the site?
 
