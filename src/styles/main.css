@@ -89,7 +89,7 @@ h6 {
 }
 
 .post blockquote {
-  @apply bg-gray-100 px-8 py-6 m-4 font-medium rounded-md overflow-hidden;
+  @apply bg-gray-100 p-6 my-4 md:mx-4 font-medium rounded-md overflow-hidden;
 }
 
 .post > p:first-of-type::first-letter {
