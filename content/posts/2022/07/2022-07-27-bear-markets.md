@@ -6,6 +6,7 @@ readtime: "1 min"
 hero: "phone"
 section: "Opinions"
 tags: "Finances"
+status: "draft"
 related: ""
 ---
 
