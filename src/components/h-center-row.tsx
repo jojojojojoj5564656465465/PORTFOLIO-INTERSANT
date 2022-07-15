@@ -3,6 +3,7 @@ import IChildrenProps from '../types/children-props'
 import BaseRow from './base-row'
 
 interface IProps extends IChildrenProps {
+  tag?: string
   tabIndex?: number
   onClick?: any
   onMouseEnter?: any
@@ -10,6 +11,7 @@ interface IProps extends IChildrenProps {
 }
 
 const HCenterRow = ({
+  tag = 'div',
   className,
   tabIndex,
   onClick,
@@ -19,6 +21,7 @@ const HCenterRow = ({
 }: IProps) => {
   return (
     <BaseRow
+      tag={tag}
       className={cn('justify-center', className)}
       tabIndex={tabIndex}
       onClick={onClick}

@@ -31,13 +31,15 @@ const { sizes, className, style } = Astro.props;
 
 const classes: string[] = []
 
-  classes.push(cn(`block`, hiddenSizes(sizes[0])))
-  classes.push(cn(`hidden`, blockSizes(sizes[0])))
+classes.push(cn(`block`, hiddenSizes(sizes[0])))
+classes.push(cn(`hidden`, blockSizes(sizes[0])))
 ---
 
-
-
-    <div class={className} style={style}>
-      <div class={classes[0]}> <slot name="s1" /></div>
-      <div class={classes[1]}> <slot name="s2" /></div>
-    </div>
+<div class={className} style={style}>
+  <div class={classes[0]}>
+    <slot name="s1" />
+  </div>
+  <div class={classes[1]}>
+    <slot name="s2" />
+  </div>
+</div>

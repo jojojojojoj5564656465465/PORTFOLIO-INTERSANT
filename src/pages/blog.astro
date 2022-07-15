@@ -16,11 +16,11 @@ const authorMap = getAuthorMap()
 
 const posts: IPreviewPost[] = await Promise.all(
   getAllPosts().map(async post => {
-    const ret : IPreviewPost = {
-    ...post,
-    excerpt: await markdownHtml(post.fields.excerpt || ''),
-    authors: [authorMap[post.fields.author]],
-}
+    const ret: IPreviewPost = {
+      ...post,
+      excerpt: await markdownHtml(post.fields.excerpt || ''),
+      authors: [authorMap[post.fields.author]],
+    }
 
     return ret
   })

@@ -1,4 +1,3 @@
-import React from 'react'
 import cn from '../lib/class-names'
 import IChildrenProps from '../types/children-props'
 
@@ -13,7 +12,6 @@ interface IProps extends IChildrenProps {
 
 const BaseCol = ({
   tag = 'div',
-  center = false,
   className = '',
   onClick,
   onMouseEnter,
@@ -21,17 +19,44 @@ const BaseCol = ({
   tabIndex,
   children,
 }: IProps) => {
-  return React.createElement(
-    tag,
-    {
-      className: cn('flex flex-col', [center, 'justify-center'], className),
-      onClick: onClick,
-      onMouseEnter: onMouseEnter,
-      onMouseLeave: onMouseLeave,
-      tabIndex: tabIndex,
-    },
-    children
-  )
+  switch (tag) {
+    case 'section':
+      return (
+        <section
+          className={cn('flex flex-col', className)}
+          onClick={onClick}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          tabIndex={tabIndex}
+        >
+          {children}
+        </section>
+      )
+    case 'ul':
+      return (
+        <ul
+          className={cn('flex flex-col', className)}
+          onClick={onClick}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          tabIndex={tabIndex}
+        >
+          {children}
+        </ul>
+      )
+    default:
+      return (
+        <div
+          className={cn('flex flex-col', className)}
+          onClick={onClick}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          tabIndex={tabIndex}
+        >
+          {children}
+        </div>
+      )
+  }
 }
 
 export default BaseCol

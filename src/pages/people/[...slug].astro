@@ -7,7 +7,7 @@ import PostsPage from '../../components/pages/posts-page'
 import PostBody from '../../components/post/post-body'
 import { AUTHOR_SLUG, RECORDS_PER_PAGE } from '../../constants'
 import ArticleLayout from '../../layouts/ArticleLayout.astro'
-import { getAllAuthors,getAuthorMap } from '../../lib/api/author'
+import { getAllAuthors, getAuthorMap } from '../../lib/api/author'
 import { getAllPosts } from '../../lib/api/post'
 import markdownHtml from '../../lib/markdown-html'
 
@@ -85,6 +85,7 @@ const {
   posts,
 } = Astro.props
 ---
+
 
 <ArticleLayout title={author.fields.name}>
   <BaseRow className="gap-x-8">

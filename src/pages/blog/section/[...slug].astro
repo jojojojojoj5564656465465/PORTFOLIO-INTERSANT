@@ -35,8 +35,6 @@ export async function getStaticPaths() {
   Array.from(sections).forEach(section => {
     const posts = allPosts.filter(post => post.fields.section.includes(section))
 
-
-
     const pages = Math.floor(
       (posts.length + RECORDS_PER_PAGE - 1) / RECORDS_PER_PAGE
     )
