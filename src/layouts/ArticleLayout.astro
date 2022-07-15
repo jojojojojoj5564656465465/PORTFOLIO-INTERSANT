@@ -1,6 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro'
-import ArticleContainer from "../components/article-container"
+import ArticleDiv from "../components/article-div"
 import cn from "../lib/class-names"
 
 export interface Props {
@@ -15,7 +15,7 @@ let { title, tab, slug, isIndexed, className } = Astro.props
 ---
 
 <BaseLayout title={title} tab={tab} slug={slug} isIndexed={isIndexed} className={cn("mt-8 lg:mt-12", className)}>
-	<ArticleContainer className={cn('mb-16', className)}>
+	<ArticleDiv className={cn('mb-16', className)}>
 		<slot />
-	</ArticleContainer>
+	</ArticleDiv>
 </BaseLayout>

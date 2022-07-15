@@ -32,12 +32,12 @@ const ExpandButton = ({ expanded = false, onClick, children }: IProps) => {
       tabIndex={0}
       onClick={onClick}
       onKeyDown={_handleInput}
-      className="cursor-pointer"
+      className="cursor-pointer gap-x-2"
       onMouseEnter={_handleMouseEnter}
       onMouseLeave={_handleMouseLeave}
     >
       <ExpandArrow expanded={expanded} hover={hover} />
-      <div className="ml-2 w-full">{children}</div>
+      <div>{children}</div>
     </VCenterRow>
   )
 }

@@ -30,7 +30,7 @@ const MenuOverlay = ({ title, page, expanded, onClick }: IProps) => {
       onClick={onClick}
     >
       <animated.div
-        className="flex flex-row flex-nowrap h-full w-96 bg-white"
+        className="flex flex-row flex-nowrap h-full w-80 bg-white"
         style={menuAnimation2}
         onClick={onClick}
       >

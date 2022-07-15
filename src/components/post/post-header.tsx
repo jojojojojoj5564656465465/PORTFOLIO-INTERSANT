@@ -3,7 +3,7 @@ import PageTitle from '../page-title'
 import PostSectionLink from './post-section-link'
 import HeroImageCaption from './hero-image-caption'
 import HeroImage from './hero-image'
-import ArticleContainer from '../article-container'
+import ArticleDiv from '../article-div'
 import IBasePost from '../../types/base-post'
 
 interface IProps {
@@ -12,13 +12,13 @@ interface IProps {
 
 const PostHeader = ({ post }: IProps) => (
   <section className="bg-gray-800">
-    <ArticleContainer className="pt-8 lg:pt-16">
-      <div className="w-6/10">
+    <ArticleDiv className="pt-8 lg:pt-16">
+      <div className="w-full md:w-6/10">
         {post.fields.section && <PostSectionLink post={post} />}
         <PageTitle
           title={post.fields.title}
           subtitle={post.fields.description}
-          className="mt-4 text-gray-50"
+          className="mt-3 text-gray-50"
         />
       </div>
       {/* <PostDetails post={post} className="block lg:hidden mb-8" /> */}
@@ -27,7 +27,7 @@ const PostHeader = ({ post }: IProps) => (
         <HeroImage post={post} />
         {post.fields.heroCaption && <HeroImageCaption post={post} />}
       </div>
-    </ArticleContainer>
+    </ArticleDiv>
   </section>
 )
 

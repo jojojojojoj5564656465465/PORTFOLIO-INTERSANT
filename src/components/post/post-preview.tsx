@@ -23,7 +23,7 @@ interface IProps extends IClassProps {
 const PostPreview = ({
   post,
   className,
-  imageClassName = 'h-64 lg:h-72',
+  imageClassName = 'h-64 md:h-72',
   headerClassName = 'text-4xl lg:text-5xl',
   innerClassName,
   showDescription = true,
@@ -57,10 +57,10 @@ const PostPreview = ({
 
       <div className={innerClassName}>
         <PostSectionLink post={post} />
-        <PostTitleLink post={post} className={headerClassName} />
+        <PostTitleLink post={post} className={cn('mt-1', headerClassName)} />
 
         {showDescription && (
-          <HTML html={post.excerpt} className="text-gray-500 mt-4" />
+          <HTML html={post.excerpt} className="text-gray-500 mt-2" />
         )}
 
         {showAvatar && (

@@ -1,4 +1,3 @@
-import { ReactElement } from 'react'
 import IChildProps from '../types/child-props'
 import Expand from './expand'
 import UnderlineLink from './link/underline-link'
@@ -17,7 +16,7 @@ const ExpandDiv = ({
   children,
 }: IProps) => (
   <Expand isExpanded={isExpanded} className={className}>
-    <h3 className="text-xl">
+    <h3 className="text-xl font-semibold">
       {href ? (
         <UnderlineLink href={href} aria="View article">
           {title}

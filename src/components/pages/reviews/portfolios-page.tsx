@@ -64,7 +64,7 @@ const Portfolio = ({ portfolio, index }: IProps) => {
             return (
               <div key={porfolioIndex}>
                 <div key={porfolioIndex}>
-                  <h3 className="font-bold tracking-wide text-xs text-gray-500">
+                  <h3 className="font-bold tracking-wide text-xs text-blue-500">
                     {brokerage.name}
                   </h3>
 

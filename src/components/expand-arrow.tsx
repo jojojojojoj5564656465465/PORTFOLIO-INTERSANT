@@ -4,12 +4,7 @@ import ChevronRightIcon from './icons/chevron-right'
 
 import cn from '../lib/class-names'
 
-const CLASSES = cn(`flex 
-  flex-row 
-  w-5 
-  h-5 
-  items-center 
-  justify-center`)
+const CLASSES = `flex flex-row w-4 h-4 items-center justify-center`
 
 interface IProps {
   expanded: boolean
@@ -50,9 +45,9 @@ const ExpandArrow = ({ expanded, hover = false }: IProps) => {
   return (
     <div ref={arrowEl} className={CLASSES}>
       <ChevronRightIcon //{isExpanded ? "chevron-up" : "chevron-down"}
-        className={cn(`w-3 animate-button`, [
+        className={cn(`w-2 animate-button`, [
           hover || _hover,
-          '',
+          'fill-blue-400',
           'fill-gray-400',
         ])}
       />

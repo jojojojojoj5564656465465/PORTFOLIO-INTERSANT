@@ -1,5 +1,5 @@
 ---
-import ArticleContainer from '../../components/article-container'
+import ArticleDiv from '../../components/article-div'
 import BaseCol from '../../components/base-col'
 import PostBody from '../../components/post/post-body'
 import PostDetails from '../../components/post/post-details'
@@ -115,7 +115,7 @@ const { post, relatedPosts, readMorePosts } = Astro.props
     <article>
       <PostHeader post={post} />
 
-      <ArticleContainer className="my-40">
+      <ArticleDiv className="my-40">
         <BaseCol className="gap-y-4">
           <PostDetailsHoz post={post} />
 
@@ -136,19 +136,19 @@ const { post, relatedPosts, readMorePosts } = Astro.props
           </PostLayout>
         </BaseCol>
 
-      </ArticleContainer>
+      </ArticleDiv>
     </article>
 
     {readMorePosts.length > 0 && (
-    <ArticleContainer className="bg-gray-50 py-16 lg:py-24">
+    <ArticleDiv className="py-16 bg-gray-50">
       <RelatedPosts posts={readMorePosts} title="Keep Reading" />
-    </ArticleContainer>
+    </ArticleDiv>
     )}
 
-    {relatedPosts.length > 0 && (
-    <ArticleContainer className="bg-gray-50 py-16 lg:py-24">
+    <!-- {relatedPosts.length > 0 && (
+    <ArticleDiv className="pb-16">
       <RelatedPosts posts={relatedPosts} title="Related Posts" />
-    </ArticleContainer>
-    )}
+    </ArticleDiv>
+    )} -->
   </>
 </BaseLayout>

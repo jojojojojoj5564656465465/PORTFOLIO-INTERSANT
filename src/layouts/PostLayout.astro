@@ -1,15 +1,15 @@
 ---
-import BaseRow from '../components/base-row'
 import cn from "../lib/class-names"
+import IClassProps from "../types/class-props";
 
-export interface Props {
-  className?: string
+export interface Props extends IClassProps {
+  
 }
 
 let { className } = Astro.props
 ---
 
-<BaseRow className={cn("gap-x-4", className)}>
+<div class={cn("flex flex-row gap-x-4", className)}>
   <section class="hidden lg:block w-5/100">
     <slot name="left" />
   </section>
@@ -19,4 +19,4 @@ let { className } = Astro.props
   <section class="hidden lg:block w-25/100">
     <slot name="right" />
   </section>
-</BaseRow>
+</div>

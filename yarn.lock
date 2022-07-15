@@ -119,10 +119,10 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@astrojs/compiler@^0.18.2":
-  version "0.18.2"
-  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.18.2.tgz#4a4d98233a69671eb95eef4f24e3b1e0fe2ebaf6"
-  integrity sha512-R2lOpaif3hDju2/sE6OrKvnTMgrcLRJw+jAVih9pLA2ATgy2EnhYMhflRk1vQ6+YwuhyL6Lj/dRJFXgB7r70eg==
+"@astrojs/compiler@^0.19.0":
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.19.0.tgz#ea25fea3ba59ce7734c2bcc65a5fd1e372329943"
+  integrity sha512-8nvyxZTfCXLyRmYfTttpJT6EPhfBRg0/q4J/Jj3/pNPLzp+vs05ZdktsY6QxAREaOMAnNEtSqcrB4S5DsXOfRg==
 
 "@astrojs/language-server@^0.13.4":
   version "0.13.4"
@@ -142,10 +142,10 @@
     vscode-languageserver-types "^3.16.0"
     vscode-uri "^3.0.2"
 
-"@astrojs/markdown-remark@^0.11.6":
-  version "0.11.6"
-  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-0.11.6.tgz#cfec8334664a7b6dea9865e5b32227161c78199b"
-  integrity sha512-UOhUWCn7ODUq+W9w6dPASzLQHBvuQuo0ZirC10Rhh3T34b2pOlrFhFKgUnlLnFEN8BQaR3P4oassk+OQwLGrKg==
+"@astrojs/markdown-remark@^0.11.7":
+  version "0.11.7"
+  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-0.11.7.tgz#7d28c296e080e45f548a72830c066cfc676410eb"
+  integrity sha512-kiGQzE0X7NJOZhluyCvOKWaZomB+efx7MhESf5cLJsuTI4dvGxEZmL7kZVnuDO5d2gvyeIBkZiD64bndKyxSkw==
   dependencies:
     "@astrojs/micromark-extension-mdx-jsx" "^1.0.3"
     "@astrojs/prism" "^0.6.0"
@@ -192,11 +192,12 @@
   resolved "https://registry.yarnpkg.com/@astrojs/prism/-/prism-0.6.0.tgz#fba82d4aa8e04c076430740c8588e97e87fc8cf5"
   integrity sha512-aHho3xNaJbys8KzkoyWOiwXwYwTBSe/RBflUolxEtHdNi8ibM0K3U20M6/SnamHnk6m78aEHQ4oHWFHI1wYUhw==
 
-"@astrojs/react@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/react/-/react-0.4.0.tgz#4498f8ebf0951f0f88434f4731078c6f119ecc4d"
-  integrity sha512-F4m0rKE5NwVjXmtzwtpuDkv4Y30RxkKwuQH3wCg+KH/g4lSTENLXy6Y6EitbViPvQQXdX8cB8uQ5Q4VVWLCS+Q==
+"@astrojs/react@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/react/-/react-0.4.1.tgz#8c967092d5878844bb7c5ade6f1e4aec67446cb0"
+  integrity sha512-TLg3FAri6DWG6pidT+0pbxVNH1UkfwTRe04OHfyhvAmC2XMpoZ1vwrMxR7Y82Jmupp/njSh7LxT307uvZRVOCQ==
   dependencies:
+    "@babel/core" ">=7.0.0-0 <8.0.0"
     "@babel/plugin-transform-react-jsx" "^7.17.12"
 
 "@astrojs/sitemap@^0.2.6":
@@ -258,7 +259,7 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.18.8.tgz#2483f565faca607b8535590e84e7de323f27764d"
   integrity sha512-HSmX4WZPPK3FUxYp7g2T6EyO8j96HlZJlxmKPSh6KAcqwyDrfx7hKjXpAW/0FhFfTJsR0Yt4lAjLI2coMptIHQ==
 
-"@babel/core@^7.18.2":
+"@babel/core@>=7.0.0-0 <8.0.0", "@babel/core@^7.18.2":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.18.6.tgz#54a107a3c298aee3fe5e1947a6464b9b6faca03d"
   integrity sha512-cQbWBpxcbbs/IUredIPkHiAGULLV8iwgNRMFzvbhEXISp4f3rUUXE5+TIw6KwUWUR3DwyI6gmBRnmAtYaWehwQ==
@@ -988,14 +989,14 @@ ast-types@0.14.2, ast-types@^0.14.2:
   dependencies:
     tslib "^2.0.1"
 
-astro@^1.0.0-beta.70:
-  version "1.0.0-beta.70"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-1.0.0-beta.70.tgz#f6d7d8071d07d16b4a4002f946d6c7481c14c9e7"
-  integrity sha512-P3fgn6bv5lEcLj3LZ3b+5z6TC5eni93q4m5Y2Mn45/gKIr0Bb/1le3eqGcRfjp0bpKpaDomBufiOPWZjWnIBUg==
+astro@^1.0.0-beta.72:
+  version "1.0.0-beta.72"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-1.0.0-beta.72.tgz#e1ac870fc4fb91032b611ad574629b23a7257fba"
+  integrity sha512-OUuASTz+3OifE7tIESdJ4RO6yDZoZ7pDiQ9lsEIwhciBKXB9ezEvpbrYmHQr1dxBdwFUwvMFcOqR/H9b2KykQQ==
   dependencies:
-    "@astrojs/compiler" "^0.18.2"
+    "@astrojs/compiler" "^0.19.0"
     "@astrojs/language-server" "^0.13.4"
-    "@astrojs/markdown-remark" "^0.11.6"
+    "@astrojs/markdown-remark" "^0.11.7"
     "@astrojs/prism" "0.6.0"
     "@astrojs/telemetry" "^0.4.0"
     "@astrojs/webapi" "^0.12.0"

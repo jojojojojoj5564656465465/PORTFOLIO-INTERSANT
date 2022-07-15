@@ -8,8 +8,8 @@ interface IProps extends IClassProps {
 }
 
 const PostTitleLink = ({ post, className }: IProps) => (
-  <h2 className={cn('font-bold mt-1', className)}>
-    <ToBlueLink href={post.slug} aria={`Read article`} underline={true}>
+  <h2 className={cn('font-bold', className)}>
+    <ToBlueLink href={post.slug} aria={post.fields.title} underline={true}>
       {post.fields.title}
     </ToBlueLink>
   </h2>

@@ -14,18 +14,13 @@ const PageTitle = ({
   className,
   children,
 }: IProps) => (
-  <header
-    className={cn(
-      'mb-8 md:mb-16 pb-8 md:pb-16 border-b border-gray-200',
-      className
-    )}
-  >
-    {supertitle && <h2 className="text-lg mb-1 text-gray-400">{supertitle}</h2>}
+  <header className={cn('pb-8 md:pb-16 ', className)}>
+    {supertitle && <h3 className="text-lg mb-1">{supertitle}</h3>}
 
     <h1 className="text-4xl lg:text-5xl font-bold">{title}</h1>
 
-    {subtitle && <h2 className="text-xl mt-4 font-light">{subtitle}</h2>}
-    {children && <h2 className="text-2xl mt-4">{children}</h2>}
+    {subtitle && <h2 className="text-xl mt-3 font-light">{subtitle}</h2>}
+    {children && <h2 className="text-2xl mt-3">{children}</h2>}
   </header>
 )
 

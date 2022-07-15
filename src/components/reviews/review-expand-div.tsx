@@ -10,7 +10,10 @@ interface IProps extends IChildProps {
 const ReviewExpandDiv = ({ title, className, children }: IProps) => (
   <ExpandDiv
     title={title}
-    className={cn('border border-slate-200  p-6 rounded-md', className)}
+    className={cn(
+      'border border-slate-200 p-6 rounded-md hover:shadow animate-shadow',
+      className
+    )}
   >
     {children}
   </ExpandDiv>
