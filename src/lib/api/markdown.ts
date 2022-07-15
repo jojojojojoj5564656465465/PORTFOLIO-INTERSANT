@@ -19,6 +19,7 @@ export const getFields = (path: string, fields: string[] = []): IPostFields => {
     author: '',
     section: '',
     related: '',
+    status: 'draft',
     tags: [],
   }
 

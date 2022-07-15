@@ -2,7 +2,7 @@ import cn from '../../lib/class-names'
 import IClassProps from '../../types/class-props'
 import IPreviewPost from '../../types/preview-post'
 import Avatar from '../avatar'
-import DateFormatter from '../date-formatter'
+import DateFormatter from './date-formatter'
 import VCenterRow from '../v-center-row'
 
 interface IProps extends IClassProps {

@@ -11,9 +11,7 @@ layout: ../layouts/MarkdownLayout.astro
 ### Who created this site?
 
 The site was designed, coded and written by
-[Antony Holmes](/blog/author/antony-holmes).
-You can learn more about him and his passion to help people with their
-investment decisions.
+[Antony Holmes](/people/antony-holmes). You can learn more about him [here](/people/antony-holmes).
 
 ### How can I support the site?
 

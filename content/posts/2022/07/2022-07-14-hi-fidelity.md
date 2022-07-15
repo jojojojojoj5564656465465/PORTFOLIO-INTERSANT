@@ -10,7 +10,7 @@ status: "draft"
 related: ""
 ---
 
-[Fidelity is a great one-stop-shop for all your banking and investing needs.
+Fidelity is a great one-stop-shop for all your banking and investing needs.
 
 <!-- end -->
 

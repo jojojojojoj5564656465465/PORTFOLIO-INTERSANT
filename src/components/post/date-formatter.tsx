@@ -1,5 +1,5 @@
 import { parseISO, format } from 'date-fns'
-import cn from '../lib/class-names'
+import cn from '../../lib/class-names'
 
 interface IProps {
   date: string
@@ -13,7 +13,7 @@ const DateFormatter = ({ date, className }: IProps) => {
       dateTime={date}
       className={cn('block text-sm text-gray-400', className)}
     >
-      {format(d, 'LLL	d, yyyy')}
+      {format(d, 'eee LLL	d, yyyy')}
     </time>
   )
 }

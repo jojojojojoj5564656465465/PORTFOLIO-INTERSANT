@@ -8,6 +8,6 @@ export default interface IPostFields {
   excerpt: string
   section: string
   related: string
-  status?: string
+  status: string
   tags: string[]
 }

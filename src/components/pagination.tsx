@@ -59,7 +59,7 @@ const LinkButton = ({ href, aria, className, children }: ButtonProps) => (
     aria={aria}
     className={cn(
       BTN_CLS,
-      'text-blue-500 fill-blue-500  hover:border-gray-300 transition duration-300',
+      'text-blue-500 fill-blue-500 hover:border-gray-300 transition duration-300',
       className
     )}
   >

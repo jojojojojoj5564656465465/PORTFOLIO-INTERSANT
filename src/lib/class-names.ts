@@ -7,7 +7,7 @@ type CSSClass = string | [boolean, string] | [boolean, string, string]
 export const cn = (...args: CSSClass[]) => {
   return args
     .map(arg => {
-      if (arg === undefined || arg === null) {
+      if (!arg) {
         return ''
       }
 

@@ -1,6 +1,6 @@
 import IPreviewPost from '../../types/preview-post'
 import Avatar from '../avatar'
-import DateFormatter from '../date-formatter'
+import DateFormatter from './date-formatter'
 import PostSocialMedia from './post-social-media'
 import PostTags from './post-tags'
 
