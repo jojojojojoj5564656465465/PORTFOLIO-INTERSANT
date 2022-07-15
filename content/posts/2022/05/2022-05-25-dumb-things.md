@@ -10,7 +10,7 @@ status: "published"
 related: ""
 ---
 
-Here are what I consider the most egregious mistakes you can make with your finances. It's not that you should necessarily completely avoid doing these things, but buyer beware.
+Here are what I consider the some of the most egregious mistakes you can make with your finances. Buyer beware.
 
 <!-- end -->
 

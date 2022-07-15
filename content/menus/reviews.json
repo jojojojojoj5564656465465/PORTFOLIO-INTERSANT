@@ -1,6 +1,6 @@
 [
   { "name": "Portfolios", "url": "/reviews/portfolios" },
-  { "name": "Credit cards", "url": "/reviews/credit-cards" },
+  { "name": "Credit Cards", "url": "/reviews/credit-cards" },
   { "name": "Brokerages", "url": "/reviews/brokerages" },
   { "name": "Websites", "url": "/reviews/websites" }
 ]

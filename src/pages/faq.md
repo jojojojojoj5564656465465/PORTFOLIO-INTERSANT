@@ -15,6 +15,13 @@ The site was designed, coded and written by
 You can learn more about him and his passion to help people with their
 investment decisions.
 
+### How can I support the site?
+
+1. Tell people you know about the site.
+2. Link to the site.
+3. Submit guest posts.
+4. Support any advertisers you see here and tell them you heard about them here.
+
 ## Personal Finance
 
 ### How much should I save?

@@ -11,8 +11,7 @@
     "title": "Community",
     "links": [
       { "name": "Contact us", "url": "/contact" },
-      { "name": "FAQ", "url": "/faq" },
-      { "name": "Support the site", "url": "/support" }
+      { "name": "FAQ", "url": "/faq" }
     ]
   }
 ]

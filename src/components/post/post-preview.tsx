@@ -1,19 +1,19 @@
-import Avatar from '../avatar'
-import DateFormatter from '../date-formatter'
-import PostImage from './post-image'
-import IPreviewPost from '../../types/preview-post'
-import cn from '../../lib/class-names'
-import PostSectionLink from './post-section-link'
 import { useState } from 'react'
-import HTML from '../html'
-import PostTitleLink from './post-title-link'
+import cn from '../../lib/class-names'
 import IClassProps from '../../types/class-props'
+import IPreviewPost from '../../types/preview-post'
+import HTML from '../html'
+import PostAuthor from './post-author'
+import PostImage from './post-image'
+import PostSectionLink from './post-section-link'
+import PostTitleLink from './post-title-link'
 
 interface IProps extends IClassProps {
   post: IPreviewPost
   imageClassName?: string
   headerClassName?: string
   innerClassName?: string
+  contentClassName?: string
   showDescription?: boolean
   showImage?: boolean
   showAvatar?: boolean
@@ -26,6 +26,7 @@ const PostPreview = ({
   imageClassName = 'h-64 md:h-72',
   headerClassName = 'text-4xl lg:text-5xl',
   innerClassName,
+  contentClassName = 'text-base',
   showDescription = true,
   showImage = true,
   showAvatar = true,
@@ -60,16 +61,13 @@ const PostPreview = ({
         <PostTitleLink post={post} className={cn('mt-1', headerClassName)} />
 
         {showDescription && (
-          <HTML html={post.excerpt} className="text-gray-500 mt-2" />
+          <HTML
+            html={post.excerpt}
+            className={cn('text-gray-600 mt-2', contentClassName)}
+          />
         )}
 
-        {showAvatar && (
-          <Avatar author={post.authors[0]} isSmall={true} className="mt-3" />
-        )}
-
-        <DateFormatter date={post.date} className="mt-3" />
-
-        {/* <p className="text-lg leading-relaxed mb-4">{post.excerpt}</p> */}
+        <PostAuthor post={post} showAvatar={showAvatar} className="mt-3" />
       </div>
     </article>
   )

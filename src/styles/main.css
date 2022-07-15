@@ -24,6 +24,10 @@ h6 {
   @apply text-base leading-relaxed font-light;
 }
 
+.markdown a {
+  @apply text-blue-500 hover:underline font-semibold;
+}
+
 .markdown ol {
   @apply mb-6 list-decimal list-outside ml-8;
 }
@@ -32,12 +36,12 @@ h6 {
   @apply mb-6 list-disc list-outside ml-8;
 }
 
-.markdown a {
-  @apply text-blue-500 hover:underline font-semibold;
-}
-
 .markdown ul li::marker {
   @apply text-2xl;
+}
+
+.post li {
+  @apply mb-0;
 }
 
 .h {
@@ -45,7 +49,7 @@ h6 {
 }
 
 .markdown h1 {
-  @apply h text-2xl;
+  @apply h text-3xl;
 }
 
 .markdown h1:not(:first-child) {
@@ -53,7 +57,7 @@ h6 {
 }
 
 .markdown h2 {
-  @apply h text-3xl;
+  @apply h text-2xl;
 }
 
 .markdown h2:not(:first-child) {

@@ -10,146 +10,41 @@ status: "draft"
 related: ""
 ---
 
-Where should you park your hard earned money?
+[Fidelity is a great one-stop-shop for all your banking and investing needs.
 
 <!-- end -->
 
-### Where does this rule come from?
+Fidelity is a full service, low cost brokerage offering a full range of investment and bank like services. I currently use them as my primary bank. Maybe you should too after reading this.
 
-It comes from a research paper in 1998 called [review](/reviews/brokerages).
+# Investing
 
-The researchers divided past financial data into rolling 30 year periods (from 1926-1995), then tested how likely the portfolio was to survive for the whole 30 years at various asset allocations and various withdrawal rates.
+Fidelity was the first major brokerage to switch to fractional share trading on basically all stocks and ETFs. This is great because you can buy shares in dollar amounts instead of waiting until you have enough to buy single shares.
 
-Back in the 90s, there was a prevalent idea in the financial planning community that if the stock market returned 7-12% a year, you could spend 7-12% of your portfolio every year in retirement and expect it to last. This important study threw a lot of cold water on that idea. It turned out if you were spending more than 5% of your portfolio a year (again, adjusted to inflation), you would be very lucky if your portfolio lasted 30 years. Let"s look at the data from the study. This is the most important table from the paper:
+Fractional shares also mean you can ditch mutual funds and replace them with ETFs, but maintain the best of both. ETFs are usually tax efficient and portable between brokerages and since you can buy in dollar amounts you have essentially the same features of a mutual fund, which the added advantage of being able to trade them whenever you like instead of the end of the day.
 
-<table class="w-full text-center">
-<thead>
-<tr>
-    <th>Payout Period</th>
-    <th>3%</th>
-    <th>4%</th>
-    <th>5%</th>
-    <th>6%</th>
-    <th>7%</th>
-    <th>8%</th>
-    <th>9%</th>
-    <th>10%</th>
-    <th>11%</th>
-    <th>12%</th>
-</thead>
-<tbody>
-<tr>
-    <td class="font-semibold">100% Stocks</td>
-</tr>
-<tr>
-    <td>15 years</td>
-    <td>100%</td>
-    <td>100%</td>
-    <td>100%</td>
-    <td>94%</td>
-    <td>86%</td>
-    <td>76%</td>
-    <td>71%</td>
-    <td>64%</td>
-    <td>51%</td>
-    <td>46%</td>
-</tr>
-<tr>
-    <td>20 years</td>
-    <td>100%</td>
-    <td>100%</td>
-    <td>92%</td>
-    <td>80%</td>
-    <td>72%</td>
-    <td>65%</td>
-    <td>52%</td>
-    <td>45%</td>
-    <td>38%</td>
-    <td>25%</td>
-</tr>
-<tr>
-    <td>25 years</td>
-    <td>100%</td>
-    <td>100%</td>
-    <td>88%</td>
-    <td>75%</td>
-    <td>63%</td>
-    <td>50%</td>
-    <td>42%</td>
-    <td>33%</td>
-    <td>27%</td>
-    <td>17%</td>
-</tr>
-<tr class="border border-red-500">
-    <td>30 years</td>
-    <td class="text-red-500">100%</td>
-    <td class="text-red-500">98%</td>
-    <td>80%</td>
-    <td>62%</td>
-    <td>55%</td>
-    <td>44%</td>
-    <td>33%</td>
-    <td>27%</td>
-    <td>15%</td>
-    <td>5%</td>
-</tr>
+# Banking
 
-<tr>
-    <td class="font-semibold">75% Stocks/25% Bonds</td>
-</tr>
-<tr>
-    <td>15 years</td>
-    <td>100%</td>
-    <td>100%</td>
-    <td>100%</td>
-    <td>97%</td>
-    <td>87%</td>
-    <td>77%</td>
-    <td>70%</td>
-    <td>56%</td>
-    <td>47%</td>
-    <td>30%</td>
-</tr>
-<tr>
-    <td>20 years</td>
-    <td>100%</td>
-    <td>100%</td>
-    <td>95%</td>
-    <td>80%</td>
-    <td>72%</td>
-    <td>60%</td>
-    <td>49%</td>
-    <td>31%</td>
-    <td>25%</td>
-    <td>11%</td>
-</tr>
-<tr>
-    <td>25 years</td>
-    <td>100%</td>
-    <td>100%</td>
-    <td>87%</td>
-    <td>70%</td>
-    <td>58%</td>
-    <td>42%</td>
-    <td>32%</td>
-    <td>20%</td>
-    <td>10%</td>
-    <td>3%</td>
-</tr>
-<tr>
-    <td>30 years</td>
-    <td>100%</td>
-    <td>100%</td>
-    <td>82%</td>
-    <td>60%</td>
-    <td>45%</td>
-    <td>35%</td>
-    <td>13%</td>
-    <td>5%</td>
-    <td>0%</td>
-    <td>0%</td>
-</tr>
-</tbody>
-</table>
+Fidelity offers a Cash Management account that comes with a debit card and is functionally equialent to a checking account.
 
-_Editor"s note: One of my pet peeves are journals that include tabular and text data as images, thus rendering the data almost useless for anyone who wants to copy it and use it themselves. Journal papers are data graveyards. This is why I copied out the table by hand and put it into a HTML table so anyone can easily copy it._
+I'm surprised more people don't use it and instead stick with tranditional banks like Chase or Bank of America.
+
+It offers amongst other things:
+
+* Free debit card
+* Free ATM withdrawls worldwide from any ATM so you don't have to worry about going out of network
+* Transfers between banks often occur same day. Much faster than the 3 or 4 day window at most banks.
+* Early deposit of direct deposits. Get your paycheck a day or 2 early.
+
+I've been a Fidelity convert for several years. It surprises me more people aren't and i
+
+# Conclusion
+
+What's not to love?
+
+<div class="conclusions">
+<ol>
+    <li>Buy any share/ETF in fractional amounts.</li>
+    <li>Early deposit of direct deposits.</li>
+    <li> Unlimited 2% cash back credit card.</li>
+</ol>
+</div>

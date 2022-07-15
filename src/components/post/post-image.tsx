@@ -19,7 +19,7 @@ const PostImage = ({
   className,
 }: IProps) => {
   const image = (
-    <div className={cn('relative overflow-hidden rounded-lg', className)}>
+    <div className={cn('relative overflow-hidden rounded-md', className)}>
       <BasePostImage
         post={post}
         size={size}

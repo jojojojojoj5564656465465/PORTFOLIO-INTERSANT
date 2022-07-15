@@ -10,9 +10,11 @@ status: "published"
 related: ""
 ---
 
-The beginning of 2022 was not kind to the stock market, so many of us might be thinking about how well our invests are doing. Likewise, you’ve probably heard of a stock or cryptocurrency that has gone on a ridiculous run (GameStop anyone) and you’ve kicked yourself for not investing. Knowing how to behave when we are faced with uncertainly can help stop us making expensive mistakes.
+Knowing how to behave when we are faced with uncertainly can help stop us making expensive mistakes.
 
 <!-- end -->
+
+The beginning of 2022 was not kind to the stock market, so many of us might be thinking about how well our invests are doing. Likewise, you’ve probably heard of a stock or cryptocurrency that has gone on a ridiculous run (GameStop anyone) and you’ve kicked yourself for not investing. 
 
 Hindsight is a wonderful thing. Knowing what I know now, I would have purchased as many shares as I could of Amazon or Apple back in the early 2000s. However, we must realize that capitalizing on every opportunity is simply impossible. If we think about all the hypothetical returns we missed out on, we'd spend an eternity in depression. Worse, it creates a sense of FOMO (Fear Of Missing Out) that may lead us to chase the next ever-elusive “hot” stock or investment trend with limited to disastrous results.
 

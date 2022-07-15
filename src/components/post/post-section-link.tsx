@@ -9,12 +9,12 @@ interface IProps {
 }
 
 const PostSectionLink = ({ post, className }: IProps) => (
-  <h3>
+  <h3 className="mb-1">
     <BaseLink
       href={getSectionUrl(post.fields.section)}
       aria={`Read more ${post.fields.section}`}
       className={cn(
-        'text-base md:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-br from-purple-500 to-red-500',
+        'text-sm font-bold text-transparent bg-clip-text bg-gradient-to-br from-purple-500 to-red-500 mb',
         className
       )}
     >

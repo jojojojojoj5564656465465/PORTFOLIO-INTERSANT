@@ -13,10 +13,10 @@ const BaseSectionPostsVert = ({ posts, rightMode = true }: IProps) => {
   const otherPosts = posts.slice(3)
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {!rightMode && <PostPreview post={topPost} />}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
         {rightMode && topPosts.length && (
           <BaseCol className="gap-y-8">
             {topPosts.map((post, index) => {

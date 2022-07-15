@@ -10,11 +10,11 @@ status: "published"
 related: ""
 ---
 
-Whether you're just starting to invest or have been for decades, total stock market index funds are still some of the best options for diversifying your investment portfolio whilst being tax efficient.
+Total stock market index funds are some of the best options for every investor to diversify their portfolio.
 
 <!-- end -->
 
-Total market funds give you access to the entire US stock market in one fund. Today we’re going to take a deep dive into three low cost, index based funds to: VTSAX from Vanguard, FSKAX from Fidelity, and SWTSX from Schwab. The goal is to see if a passively managed fund is a better fit for you than one that’s actively managed. All the funds perform similarly, and largely track the same stocks, so really it boils down to which brokerage you prefer.
+Total market funds give you access to the entire US stock market in one fund, whilst being tax efficient. Today we’re going to take a deep dive into three low cost, index based funds to: VTSAX from Vanguard, FSKAX from Fidelity, and SWTSX from Schwab. The goal is to see if a passively managed fund is a better fit for you than one that’s actively managed. All the funds perform similarly, and largely track the same stocks, so really it boils down to which brokerage you prefer.
 
 # What are Index Funds?
 

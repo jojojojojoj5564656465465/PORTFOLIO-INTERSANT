@@ -1,5 +1,5 @@
 import IPreviewPost from '../../types/preview-post'
-import PostPreview from './post-preview'
+import LatestPost from './latest-post'
 import PostsHeader from './posts-header'
 
 interface IProps {
@@ -12,14 +12,7 @@ const LatestPosts = ({ posts }: IProps) => (
 
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-4">
       {posts.slice(0, 4).map((post, index) => {
-        return (
-          <PostPreview
-            post={post}
-            showImage={false}
-            key={index}
-            headerClassName="text-3xl"
-          />
-        )
+        return <LatestPost post={post} key={index} />
       })}
     </div>
   </section>

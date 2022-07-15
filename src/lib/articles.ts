@@ -5,5 +5,5 @@ export const getPostRelativeUrl = (slug: string): string => {
 }
 
 export const getPostUrl = (slug: string): string => {
-  return `${SITE_URL}${getPostRelativeUrl(slug)}`
+  return `${SITE_URL}${slug}`
 }
